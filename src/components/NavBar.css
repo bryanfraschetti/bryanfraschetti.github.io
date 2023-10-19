@@ -1,11 +1,19 @@
 :root{
     --main-font-color: lightblue;
+    --secondary-font-color: #0ea9f1;
+    --main-background-color: black;
 }
+
 
 /*Overall Navbar Container*/
 .navbar{
-    background-color: black;
+    background-color: var(--main-background-color);
     padding: 12px 0px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
 }
 
 /*Container Element*/
@@ -34,7 +42,7 @@
     left: 0;
     width: 80%;
     height: 2px; /* Adjust the height of the line as needed */
-    background-color: var(--main-font-color); /* Change the color of the line */
+    background-color: var(--secondary-font-color); /* Change the color of the line */
     transform: translateX(12.5%) scaleX(0); /* Initial state: line is invisible */
     transition: transform 0.2s ease, width 0.2s ease; /* Add a transition for the line appearance */
   }
@@ -49,12 +57,17 @@
     display: inline-block;
 }
 
+.navbar-toggler:focus{
+    box-shadow: none;
+    border: none;
+}
+
 /*bars of hamburger menu*/
 .bar {
     display: block;
     width: 30px;
     height: 2px;
-    background-color: var(--main-font-color);
+    background-color: var(--secondary-font-color);
     margin: 6px auto;
     transition: transform 0.3s ease, opacity 0.25s ease-in-out;
     border-radius: 5px;
@@ -87,7 +100,7 @@
 
 a{
     text-decoration: none;
-    color: var(--main-font-color);
+    color: var(--secondary-font-color);
 }
 
 .navbar-nav{

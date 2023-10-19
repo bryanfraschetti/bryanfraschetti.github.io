@@ -5,7 +5,7 @@ export function TypingEffect(phrase, delay, initiationDelay){
     const positionRef = useRef(0)
 
     useEffect(() => {
-        setTimeout(()=>{
+        setTimeout(() => {
             const intervalId = setInterval(() => {
                 setPosition((value) => value + 1)
                 positionRef.current += 1
@@ -13,6 +13,7 @@ export function TypingEffect(phrase, delay, initiationDelay){
                     clearInterval(intervalId)
                 }
             }, delay)
+            
             return () => {
                 clearInterval(intervalId)
             }

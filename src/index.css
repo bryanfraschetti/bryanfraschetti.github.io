@@ -1,3 +1,9 @@
+:root{
+    --main-font-color: lightblue;
+    --secondary-font-color: #0ea9f1;
+    --main-background-color: black;
+}
+
 body {
     box-sizing: border-box;
     margin: 0;
@@ -6,7 +12,8 @@ body {
         sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: white;
+    background: var(--main-background-color);
+    color: var(--main-font-color);
 }
 
 a{

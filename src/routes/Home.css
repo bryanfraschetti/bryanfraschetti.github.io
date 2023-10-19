@@ -1,0 +1,14 @@
+.section{
+    padding: 30px;
+    background-color: var(--main-background-color);
+    color: var(--main-font-color)
+}
+
+.section-title{
+    padding: 20px 0px;
+    margin: 0;
+}
+
+.paragraph{
+    font-size: 18px;
+}

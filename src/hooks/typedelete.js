@@ -11,8 +11,7 @@ export function TypeDelete(phrase, typingDelay, deletingDelay, initiationDelay){
 
     useEffect(() => {
 
-        setTimeout(() =>{
-            console.log("q" + phrase)
+        setTimeout(() => {
 
             var reachedEnd = false
 
@@ -26,9 +25,10 @@ export function TypeDelete(phrase, typingDelay, deletingDelay, initiationDelay){
                 }
     
                 if(reachedEnd){
-                    setTimeout(()=>{const intervalIdDec = setInterval(() => {
+                    setTimeout(() => {const intervalIdDec = setInterval(() => {
                         setPosition((value) => value - 1)
                         positionRef.current -= 1
+
                         if(positionRef.current === 0){
                             clearInterval(intervalIdDec)
                         }
@@ -43,7 +43,6 @@ export function TypeDelete(phrase, typingDelay, deletingDelay, initiationDelay){
         }, initiationDelay)
 
     }, [phrase, typingDelay, deletingDelay, initiationDelay])
-    // console.log(phrase.substring(0, position))
 
     return phrase.substring(0, position)
 }

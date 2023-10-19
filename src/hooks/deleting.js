@@ -12,6 +12,7 @@ export function DeleteEffect(phrase, delay){
                 clearInterval(intervalId)
             }
         }, delay)
+        
         return () => {
             clearInterval(intervalId)
         }
