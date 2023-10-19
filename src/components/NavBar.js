@@ -1,30 +1,36 @@
-import {Navbar, Container, Nav} from "react-bootstrap"
-export const NavBar = () => {
+
+import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom'; // Assuming you're using React Router for navigation
+import "./NavBar.css"
+import { useState } from 'react';
+
+const NavBar = () => {
+    const [isOpen, setIsOpen] = useState(false);
+  
+    const handleToggle = () => {
+      setIsOpen(!isOpen);
+    };
+
     return (
         <Navbar expand="lg">
-            <Container>
-                <Navbar.Toggle aria-controls="basic-navbar-nav">
-                    <span className="navbar-toggler-icon"></span>
+            <Container className="nav-container">
+                <Link to="/" id="brand">Bryan Fraschetti</Link>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={handleToggle}>
+                    <span className={`bar ${isOpen ? 'active' : ''}`}></span>
+                    <span className={`bar ${isOpen ? 'active' : ''}`}></span>
+                    <span className={`bar ${isOpen ? 'active' : ''}`}></span>
                 </Navbar.Toggle>
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#experience">Experience</Nav.Link>
-                        <Nav.Link href="#projects">Projects</Nav.Link>
-                        <Nav.Link href="#education">Education</Nav.Link>
+                    <Nav className="ml-auto nav-menu">
+                        <Link to="/" className="nav-item">Home</Link>
+                        <Link to="/projects" className="nav-item">Projects</Link>
+                        <Link to="/experience" className="nav-item">Experience</Link>
+                        <Link to="/education" className="nav-item">Education</Link>
                     </Nav>
-                    <span className="navbar-text">
-                        <div className="social-icon">
-                            <a href="#"><img src={''} alt=""/></a>
-                            <a href="#"><img src={''} alt=""/></a>
-                            <a href="#"><img src={''} alt=""/></a>
-                        </div>
-                        <button className="vvd" onClick={() => console.log("clicked")}>
-                            <span>Let's Connect</span>
-                        </button>
-                    </span>
                 </Navbar.Collapse>
             </Container>
-        </Navbar>
-    )
-}
+        </Navbar> 
+    );
+};
+
+export default NavBar
