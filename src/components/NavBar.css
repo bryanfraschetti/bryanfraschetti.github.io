@@ -40,9 +40,9 @@
   }
   
   /* Define the hover effect to make the line appear */
-  .nav-item:hover::after {
+.nav-item:hover::after {
     transform: translateX(12.5%) scaleX(1); /* The line becomes visible on hover */
-  }
+}
 
 /*Container of hamburger menu*/
 .navbar-toggler{
