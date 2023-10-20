@@ -30,7 +30,7 @@ const Hero = () =>{
 
                 </div>
             </section>
-            <MyButton text={"oo"}/>
+            <MyButton className="see-more" text={"oo"}/>
         </div>
     )
 }

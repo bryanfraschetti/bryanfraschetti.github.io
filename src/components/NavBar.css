@@ -9,6 +9,7 @@
 .navbar{
     background-color: var(--main-background-color);
     padding: 12px 0px;
+    min-height: 75px;
     position: fixed;
     top: 0;
     left: 0;
@@ -32,7 +33,7 @@
     position: relative;
     font-size: 1.2rem;
     font-weight: 400;
-    padding: 10px 0;
+    padding: 10px;
 }
 
 .nav-item::after {
@@ -108,9 +109,9 @@ a{
     align-items: center;
 }
 
-@media screen and (min-width: 992px) {
-    .nav-item{
-        padding: 10px;
+@media screen and (max-width: 992px) {
+    .navbar{
+        min-height: 75px;
+        padding: 22px 0px;
     }
-    
 }

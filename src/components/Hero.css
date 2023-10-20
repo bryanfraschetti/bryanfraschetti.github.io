@@ -14,8 +14,8 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    height: 600px;
+    height: 100vh;
+    /* height: 600px; */
     width: 100%;
 }
 
@@ -25,7 +25,7 @@ body {
 }
 
 @media screen and (min-width: 500px){
-    .hero{
+    .hero-content{
         justify-content: start;
     }
     .inner-text {

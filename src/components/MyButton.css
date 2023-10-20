@@ -1,0 +1,16 @@
+.my-btn{
+    display: block;
+}
+
+.see-more{
+    position: relative;
+    bottom: 150px;
+}
+
+@media screen and (min-width: 500px) {
+    .see-more{
+        display: block;
+        margin-left: auto;
+        right: 200px;
+    }
+}
