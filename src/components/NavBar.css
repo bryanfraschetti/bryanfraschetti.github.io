@@ -42,7 +42,8 @@
     bottom: 5px;
     left: 0;
     width: 80%;
-    height: 2px; /* Adjust the height of the line as needed */
+    height: 3px; /* Adjust the height of the line as needed */
+    border-radius: 3px;
     background-color: var(--secondary-font-color); /* Change the color of the line */
     transform: translateX(12.5%) scaleX(0); /* Initial state: line is invisible */
     transition: transform 0.2s ease, width 0.2s ease; /* Add a transition for the line appearance */

@@ -5,12 +5,20 @@
 }
 
 
+
 .accordion-button{
     font-size: 1.4rem;
 }
 
+.accordion-button.collapsed{
+    background-color: var(--main-background-color);
+    color: var(--main-font-color);
+    /* border: none; */
+}
+
 .accordion-button:not(.collapsed){
-    /* background-color: var(--main-background-color); */
-    /* color: var(--main-font-color); */
-    border: none;
+    background-color: var(--main-background-color);
+    color: var(--main-font-color);
+    /* border: none; */
+
 }
