@@ -2,7 +2,9 @@ import "./Hero.css"
 
 import { TypeDelete } from "../hooks/typedelete"
 import { TypingEffect } from "../hooks/typing";
-import MyButton from "./MyButton"
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import "./MyButton.css"
 
 
 const Hero = () =>{
@@ -16,21 +18,22 @@ const Hero = () =>{
     return (
         <div className="hero">
             <section className="hero-content">
-            <div className="inner-text">
-                {messages.map((message, index) => (
-                    <TypeDelete
-                    key={index}
-                    phrase={message.text}
-                    typingDelay={message.typingDelay}
-                    deletingDelay={message.deletingDelay}
-                    initiationDelay={message.initiationDelay}
-                    />
-                ))}
-                <p className="inner-text">{finalMessage}</p>
-
+                <div className="inner-text" style={{ minHeight: 170}}>
+                    {messages.map((message, index) => (
+                        <TypeDelete
+                        key={index}
+                        phrase={message.text}
+                        typingDelay={message.typingDelay}
+                        deletingDelay={message.deletingDelay}
+                        initiationDelay={message.initiationDelay}
+                        />
+                    ))}
+                    <p>{finalMessage}</p>
                 </div>
+                <Link to={"./projects"} style={{ width: "fit-content", position: "relative", left: "90%", transform: "translateX(-100%)" }}>
+                    <Button variant="outline-info" className="my-btn see-more">View My Work</Button>
+                </Link>
             </section>
-            <MyButton className="see-more" text={"oo"}/>
         </div>
     )
 }

@@ -1,14 +1,16 @@
-.section{
-    padding: 30px;
-    background-color: var(--main-background-color);
-    color: var(--main-font-color)
+:root{
+    --main-font-color: lightblue;
+    --secondary-font-color: #0ea9f1;
+    --main-background-color: black;
 }
 
-.section-title{
-    padding: 20px 0px;
-    margin: 0;
+
+.accordion-button{
+    font-size: 1.4rem;
 }
 
-.paragraph{
-    font-size: 18px;
+.accordion-button:not(.collapsed){
+    /* background-color: var(--main-background-color); */
+    /* color: var(--main-font-color); */
+    border: none;
 }

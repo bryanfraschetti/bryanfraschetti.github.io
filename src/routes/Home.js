@@ -3,6 +3,7 @@ import NavBar from '../components/NavBar'
 import Hero from '../components/Hero'
 import Footer from '../components/Footer'
 import Attribute from '../components/Attribute'
+import { Accordion } from 'react-bootstrap'
 import "../components/AttributeContainer.css"
 import "./Home.css"
 
@@ -11,11 +12,13 @@ const Home = () => {
     <div>
         <NavBar />
         <Hero />
+        <Accordion>
+            <Accordion.Item>
+                <Accordion.Header className="my-acdn">About Me</Accordion.Header>
+                <Accordion.Body>lorem ipsum doler</Accordion.Body>
+            </Accordion.Item>
+        </Accordion>
         <div className='section'>
-            <h3 className='section-title'>About Me</h3>
-            <div className='paragraph'>
-                My name is Bryan Fraschetti and I am 
-            </div>
             {/* <h3 className='section-title'>Software Languages</h3> */}
             {/* <div className='attribute-container'>
                 <Attribute child="Python" />

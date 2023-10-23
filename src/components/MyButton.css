@@ -1,16 +1,5 @@
 .my-btn{
     display: block;
-}
-
-.see-more{
-    position: relative;
-    bottom: 150px;
-}
-
-@media screen and (min-width: 500px) {
-    .see-more{
-        display: block;
-        margin-left: auto;
-        right: 200px;
-    }
+    font-size: 18px;
+    padding: 8px 20px;
 }
