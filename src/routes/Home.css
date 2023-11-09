@@ -1,24 +1,116 @@
 :root{
-    --main-font-color: lightblue;
-    --secondary-font-color: #0ea9f1;
-    --main-background-color: black;
+    --card-width: 180px;
+    --card-height: 180px;
+}
+
+.attribute-card{
+    background: #001a28;
+    width: var(--card-width);
+    height: var(--card-height);
+    padding: 3px;
+    position: relative;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    font-size: 1.5em;
+    color: white;
+}
+
+.attribute-card:hover {
+    color: rgb(88 199 250 / 100%);
+    transition: color 1s;
+}
+
+.attribute-card::before {
+    content: "";
+    width: 104%;
+    height: 102%;
+    border-radius: 8px;
+    background-image: linear-gradient(
+      var(--rotate)
+      , #5ddcff, #3c67e3 43%, #4e00c2);
+    position: absolute;
+    z-index: -1;
+    top: -1%;
+    left: -2%;
+    animation: spin 2.5s linear infinite;
+}
+  
+.attribute-card::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--card-height) / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--card-height) / 6));
+    background-image: linear-gradient(
+      var(--rotate)
+      , #5ddcff, #3c67e3 43%, #4e00c2);
+    opacity: 1;
+    transition: opacity .5s;
+    animation: spin 2.5s linear infinite;
+}
+
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+}
+
+@keyframes spin {
+    0% {
+      --rotate: 0deg;
+    }
+    100% {
+      --rotate: 360deg;
+    }
+}
+
+.attribute-text{
+    font-size: 1rem;
+    margin: 8px;
+    font-weight: 500;
+}
+
+.three-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    grid-gap: 60px; /* Adjust the gap as needed */
+    text-align: center;
+    margin: 50px 80px;
+}
+
+.column{
+    background-color: #001a28;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.emphasized-text{
+    font-size: 1.1rem;
+    color: #d0b1ff;   
 }
 
 
-
-.accordion-button{
-    font-size: 1.4rem;
+.col-head{
+    font-size: 1.5rem;
+    color: rgb(88, 199, 250);
+    margin-bottom: 25px;
 }
 
-.accordion-button.collapsed{
-    background-color: var(--main-background-color);
-    color: var(--main-font-color);
-    /* border: none; */
-}
 
-.accordion-button:not(.collapsed){
-    background-color: var(--main-background-color);
-    color: var(--main-font-color);
-    /* border: none; */
+@media (min-width: 1050px) {
+    .three-container {
+        grid-template-columns: repeat(3, 1fr); /* Three equal-width columns */
+        gap: 80px;
+    }
+
 
 }

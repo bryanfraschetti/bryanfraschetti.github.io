@@ -1,10 +1,3 @@
-:root{
-    --main-font-color: lightblue;
-    --secondary-font-color: #0ea9f1;
-    --main-background-color: black;
-}
-
-
 /*Overall Navbar Container*/
 .navbar{
     background-color: var(--main-background-color);
@@ -33,7 +26,7 @@
     position: relative;
     font-size: 1.2rem;
     font-weight: 400;
-    padding: 10px;
+    padding: 10px 15px;
 }
 
 .nav-item::after {
@@ -44,7 +37,7 @@
     width: 80%;
     height: 3px; /* Adjust the height of the line as needed */
     border-radius: 3px;
-    background-color: var(--secondary-font-color); /* Change the color of the line */
+    background-color: var(--main-font-color); /* Change the color of the line */
     transform: translateX(12.5%) scaleX(0); /* Initial state: line is invisible */
     transition: transform 0.2s ease, width 0.2s ease; /* Add a transition for the line appearance */
   }
@@ -69,7 +62,7 @@
     display: block;
     width: 30px;
     height: 2px;
-    background-color: var(--secondary-font-color);
+    background-color: var(--main-font-color);
     margin: 6px auto;
     transition: transform 0.3s ease, opacity 0.25s ease-in-out;
     border-radius: 5px;
@@ -102,7 +95,7 @@
 
 a{
     text-decoration: none;
-    color: var(--secondary-font-color);
+    color: var(--main-font-color);
 }
 
 .navbar-nav{
@@ -114,5 +107,9 @@ a{
     .navbar{
         min-height: 75px;
         padding: 22px 0px;
+    }
+
+    .nav-item{
+        padding: 25px;
     }
 }
