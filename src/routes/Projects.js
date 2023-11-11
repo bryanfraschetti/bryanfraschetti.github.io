@@ -1,9 +1,9 @@
 import NavBar from '../components/NavBar'
 import { Card } from 'react-bootstrap'
 import { BootstrapOriginal, CplusplusPlain, Css3Original, DeviconsReactOriginal, GitOriginal, GithubOriginal, Html5Original, JavascriptOriginal, MatlabOriginal, NumpyOriginal, OpencvOriginal, PythonOriginal, ReactOriginal, TensorflowOriginal, UbuntuPlain } from 'devicons-react'
-// import rosLogo from "../assets/Ros_logo.svg"
+import rosLogo from "../assets/Ros_logo.svg"
 import kivyLogo from "../assets/kivy.svg"
-// import XtensorLogo from "../assets/Xtensor_logo.svg"
+import XtensorLogo from "../assets/Xtensor_logo.svg"
 import Footer from '../components/Footer'
 // import Example from "../components/example";
 
@@ -12,7 +12,7 @@ const Projects = () => {
   return (
     <div>
         <NavBar/>
-        {/* <div className='card-container post-nav'>
+        <div className='card-container post-nav'>
             <Card style={{ width: '18rem' }}>
             <Card.Img variant="top" src="holder.js/100px180" />
             <Card.Body>
@@ -125,7 +125,7 @@ const Projects = () => {
                 </div>
             </Card.Body>
             </Card>
-        </div> */}
+        </div>
         <div className='card-container post-nav'>
             <div style={{ fontSize: "1.5rem"}}>My <span className='accent-text'>Projects</span></div>
             {/* <Example/> */}
