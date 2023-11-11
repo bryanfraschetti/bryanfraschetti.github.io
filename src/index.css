@@ -54,17 +54,6 @@ ul{
     color: var(--accent-text)
 }
 
-.icon-list-container{
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
-.devicon{
-    padding: 0px 5px;
-}
-
 .row-flex-center{
     display: flex;
     flex-direction: row;

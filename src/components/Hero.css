@@ -1,6 +1,6 @@
 .hero{
     /* background: url('https://upload.wikimedia.org/wikipedia/commons/c/c5/Moraine_Lake_17092005.jpg') no-repeat center; */
-    background: url('/src/assets/hero.png') no-repeat center;
+    background: url('/src/assets/hero.jpg') no-repeat center;
     background-size: cover;
     background-color: rgba(0,14,22,0.7);
     background-blend-mode: multiply;

@@ -17,7 +17,7 @@ import gsap from 'gsap'
 const Home = () => {
 
     useEffect(() => {
-        gsap.to(":root", {
+        gsap.to(".attribute-card", {
           duration: 2.5,
           "--rotate": 360,
           repeat: -1,
@@ -108,31 +108,31 @@ const Home = () => {
                 <RevealComponent>
                     <div className='row-flex-center'>
                         <div>
-                            <JavascriptOriginal size={70} className="my-tools-icons"></JavascriptOriginal>
+                            <JavascriptOriginal size={70} className="my-tools-icons" alt="Javascript"></JavascriptOriginal>
                         </div>
                         <div>
-                            <NodejsOriginal size={70} className="my-tools-icons"></NodejsOriginal>
+                            <NodejsOriginal size={70} className="my-tools-icons" alt="NodeJS"></NodejsOriginal>
                         </div>
                         <div>
-                            <ExpressOriginal size={70} className="my-tools-icons" style={{backgroundColor: "white", borderRadius: "4px"}}></ExpressOriginal>
+                            <ExpressOriginal size={70} className="my-tools-icons" alt="ExpressJS" style={{backgroundColor: "white", borderRadius: "4px"}}></ExpressOriginal>
                         </div>
                         <div>
-                            <ReactOriginal size={70} className="my-tools-icons"></ReactOriginal>
+                            <ReactOriginal size={70} className="my-tools-icons" alt="ReactJS"></ReactOriginal>
                         </div>
                         <div>
-                            <PythonOriginal size={70} className="my-tools-icons"></PythonOriginal>
+                            <PythonOriginal size={70} className="my-tools-icons" alt="Python"></PythonOriginal>
                         </div>
                         <div>
-                            <NginxOriginal size={70} className="my-tools-icons"></NginxOriginal>
+                            <NginxOriginal size={70} className="my-tools-icons" alt="NginX"></NginxOriginal>
                         </div>
                         <div>
-                            <MysqlOriginal size={70} className="my-tools-icons"></MysqlOriginal>
+                            <MysqlOriginal size={70} className="my-tools-icons" alt="MySQL"></MysqlOriginal>
                         </div>
                         <div>
-                            <GitOriginal size={70} className="my-tools-icons"></GitOriginal>
+                            <GitOriginal size={70} className="my-tools-icons" alt="Git"></GitOriginal>
                         </div>
                         <div>
-                            <FaGithub size={70} className="my-tools-icons" color='#6e5494'></FaGithub>
+                            <FaGithub size={70} className="my-tools-icons" alt="Github" color='#6e5494'></FaGithub>
                         </div>
                     </div>
                 </RevealComponent>
@@ -142,22 +142,22 @@ const Home = () => {
                 <RevealComponent>
                     <div className='row-flex-center'>
                         <div>
-                            <TensorflowLine size={70} className="my-tools-icons"></TensorflowLine>
+                            <TensorflowLine size={70} className="my-tools-icons" alt="TensorFlow"></TensorflowLine>
                         </div>
                         <div>
-                            <NumpyOriginal size={70} className="my-tools-icons"></NumpyOriginal>
+                            <NumpyOriginal size={70} className="my-tools-icons" alt="NumPy"></NumpyOriginal>
                         </div>
                         <div>
-                            <OpencvOriginal size={70} className="my-tools-icons"></OpencvOriginal>
+                            <OpencvOriginal size={70} className="my-tools-icons" alt="OpenCV"></OpencvOriginal>
                         </div>
                         <div>
-                            <CplusplusPlain size={70} className="my-tools-icons"></CplusplusPlain>
+                            <CplusplusPlain size={70} className="my-tools-icons" alt="C++"></CplusplusPlain>
                         </div>
                         <div>
-                            <MatlabOriginal size={70} className="my-tools-icons"></MatlabOriginal>
+                            <MatlabOriginal size={70} className="my-tools-icons" alt="MatLab"></MatlabOriginal>
                         </div>
                         <div>
-                            <VscodeOriginal size={70} className="my-tools-icons"></VscodeOriginal>
+                            <VscodeOriginal size={70} className="my-tools-icons" alt="VSCode"></VscodeOriginal>
                         </div>
                     </div>
                 </RevealComponent>
