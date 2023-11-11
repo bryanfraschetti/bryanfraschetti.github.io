@@ -1,18 +1,22 @@
 .my-footer{
-    margin: 0px 10%;
     border-top: 1px var(--main-font-color) solid;
     box-sizing: border-box;
+    font-size: medium;
+    padding: 10px 0px;
+    text-align: center;
+    font-weight: 300;
+    margin: 0 10%;
+}
+
+.footer-icon-container{
     display: flex;
     flex-direction: row;
-    /* justify-content: space-between; */
+    justify-content: center;
     align-items: center;
-    font-size: medium;
-    font-weight: 500;
-    /* padding: 0px 10px; */
 }
 
 .footer-icons{
     display: flex;
     align-items: center;
-    padding: 10px 10px;
+    padding: 10px 0px;
 }

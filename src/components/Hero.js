@@ -18,7 +18,7 @@ const Hero = () =>{
 
     const scrollToAboutMe = () => {
         scroller.scrollTo('about-me', {
-          duration: 400,
+          duration: 50,
           delay: 0,
           smooth: 'easeOutQuad',
           offset: -75

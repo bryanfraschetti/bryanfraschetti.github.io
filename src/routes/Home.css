@@ -1,7 +1,27 @@
 :root{
     --card-width: 180px;
     --card-height: 180px;
+    --rotate: 132deg;
 }
+
+
+
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+}
+
+@keyframes spin {
+    0% {
+      --rotate: 0deg;
+    }
+    100% {
+      --rotate: 360deg;
+    }
+}
+
+
 
 .attribute-card{
     background: #001a28;
@@ -46,9 +66,9 @@
     right: 0;
     z-index: -1;
     height: 100%;
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
-    transform: scale(0.8);
+    transform: scale(0.7);
     filter: blur(calc(var(--card-height) / 6));
     background-image: linear-gradient(
       var(--rotate)
@@ -56,21 +76,6 @@
     opacity: 1;
     transition: opacity .5s;
     animation: spin 2.5s linear infinite;
-}
-
-@property --rotate {
-    syntax: "<angle>";
-    initial-value: 132deg;
-    inherits: false;
-}
-
-@keyframes spin {
-    0% {
-      --rotate: 0deg;
-    }
-    100% {
-      --rotate: 360deg;
-    }
 }
 
 .attribute-text{
@@ -82,13 +87,14 @@
 .three-container {
     display: grid;
     grid-template-columns: 1fr; /* Stack columns on smaller screens */
-    grid-gap: 60px; /* Adjust the gap as needed */
+    grid-gap: 30px; /* Adjust the gap as needed */
     text-align: center;
-    margin: 50px 80px;
+    margin: 20px 0px;
 }
 
 .column{
     background-color: #001a28;
+    background-color: var(--main-background-color);
     border-radius: 20px;
     padding: 20px;
 }
@@ -106,11 +112,27 @@
 }
 
 
-@media (min-width: 1050px) {
+@media (min-width: 600px) {
+    .three-container{
+        padding: 40px 80px;
+    }
+}
+
+.my-tools-icons{
+    margin: 20px;
+}
+
+@media (min-width: 1200px) {
     .three-container {
         grid-template-columns: repeat(3, 1fr); /* Three equal-width columns */
-        gap: 80px;
+        gap: 4vw;
     }
-
-
 }
+
+@media (max-width: 1200px) {
+    .three-container {
+        background-color: #001a28;
+        background-color: var(--main-background-color);
+    }
+}
+
