@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.961e1641.css",
-    "main.js": "/static/js/main.5f941ad1.js",
+    "main.css": "/static/css/main.6b8e82df.css",
+    "main.js": "/static/js/main.c57e7dbf.js",
     "static/media/hero.png": "/static/media/hero.a0d72cd9b08ea12ca206.png",
+    "static/media/Ros_logo.svg": "/static/media/Ros_logo.9241d81c8145c6c947291e379149bd78.svg",
+    "static/media/Xtensor_logo.svg": "/static/media/Xtensor_logo.2e3178cce4e864e18ed51d3f2771038a.svg",
     "static/media/kivy.svg": "/static/media/kivy.6a69f1d83a784a3dbb85921cbd46e291.svg",
     "index.html": "/index.html",
-    "main.961e1641.css.map": "/static/css/main.961e1641.css.map",
-    "main.5f941ad1.js.map": "/static/js/main.5f941ad1.js.map"
+    "main.6b8e82df.css.map": "/static/css/main.6b8e82df.css.map",
+    "main.c57e7dbf.js.map": "/static/js/main.c57e7dbf.js.map"
   },
   "entrypoints": [
-    "static/css/main.961e1641.css",
-    "static/js/main.5f941ad1.js"
+    "static/css/main.6b8e82df.css",
+    "static/js/main.c57e7dbf.js"
   ]
 }
