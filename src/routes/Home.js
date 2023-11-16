@@ -18,7 +18,7 @@ const Home = () => {
 
     useEffect(() => {
         gsap.to(".attribute-card", {
-          duration: 2.5,
+          duration: 2,
           "--rotate": 360,
           repeat: -1,
           ease: "linear",
@@ -32,9 +32,9 @@ const Home = () => {
         <NavBar />
         <Hero />
         <Element id="about-me" name="about-me" style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
-            <div style={{margin:"60px 0px 20px 0px", fontSize: "2rem"}}>Experience I
+            <h1 style={{margin:"80px 0px 40px 0px"}} className='my-header'>Experience I
                 <span className='accent-text' style={{fontSize: "2.2rem"}}> Offer</span>
-            </div>
+            </h1>
             <div className='card-container' style={{margin:"0px"}}>
                 <Card className='attribute-card'>
                     <FaServer size={70}></FaServer>
@@ -55,7 +55,7 @@ const Home = () => {
                 <div className="three-container">
                     <div className="column">
                         <div className='col-head'>Qualities</div>
-                        <div>
+                        <p>
                             I am a
                             <span className='emphasized-text'> curious </span> individual who
                             is driven to be constantly learning,
@@ -71,11 +71,11 @@ const Home = () => {
                             <span className='emphasized-text'> creative</span>, 
                             often arriving at outside-of-the-box solutions to intricate
                             problems.
-                        </div>
+                        </p>
                     </div>
                     <div className="column">
                         <div className='col-head'>Summary of Experiences</div>
-                        <div>
+                        <p>
                             I am a qualified professional with a strong background  
                             in <span className='emphasized-text'>full stack</span> and 
                             <span className='emphasized-text'> machine learning</span> software development.
@@ -84,10 +84,11 @@ const Home = () => {
                             <span className='emphasized-text'> CI/CD </span>application lifecycle. From
                             feature extraction, to creating virtualizations, to networking, to front-end design, I've enjoyed it all.
                             
-                        </div>
+                        </p>
                     </div>
                     <div className="column">
                         <div className='col-head'>Interests</div>
+                        <p>
                         I am an enthusiastic individual with a diverse set of interests, both casual and academic.
                         In my free time, one of my major passions is
                         <span className='emphasized-text'> music</span>, which I enjoy through playing piano, guitar,
@@ -95,6 +96,7 @@ const Home = () => {
                         <span className='emphasized-text'> history </span>, and experience different cultures.
                         I am also a fan of many <span className='emphasized-text'> sports </span> such as soccer, 
                         Formula 1, skiing, and chess.
+                        </p>
                     </div>
                 </div>
             </RevealComponent>
