@@ -1,20 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.d9b39c35.css",
-    "main.js": "/static/js/main.ad80bcfc.js",
+    "main.css": "/static/css/main.fa7fb1e6.css",
+    "main.js": "/static/js/main.f4971e63.js",
     "static/media/my-site.png": "/static/media/my-site.038b703d11c288ebc012.png",
     "static/media/hero.jpg": "/static/media/hero.0244344e2d17b83bced4.jpg",
     "static/media/Sequence.png": "/static/media/Sequence.5a5f57a05c60b649d2fd.png",
     "static/media/arc.png": "/static/media/arc.029f9b33b32beb8c479c.png",
+    "static/media/react-bootstrap.svg": "/static/media/react-bootstrap.2dc6d71fbe8c6ee76097d23eabe31b13.svg",
     "static/media/Ros_logo.svg": "/static/media/Ros_logo.9241d81c8145c6c947291e379149bd78.svg",
     "static/media/Xtensor_logo.svg": "/static/media/Xtensor_logo.2e3178cce4e864e18ed51d3f2771038a.svg",
     "static/media/kivy.svg": "/static/media/kivy.6a69f1d83a784a3dbb85921cbd46e291.svg",
     "index.html": "/index.html",
-    "main.d9b39c35.css.map": "/static/css/main.d9b39c35.css.map",
-    "main.ad80bcfc.js.map": "/static/js/main.ad80bcfc.js.map"
+    "main.fa7fb1e6.css.map": "/static/css/main.fa7fb1e6.css.map",
+    "main.f4971e63.js.map": "/static/js/main.f4971e63.js.map"
   },
   "entrypoints": [
-    "static/css/main.d9b39c35.css",
-    "static/js/main.ad80bcfc.js"
+    "static/css/main.fa7fb1e6.css",
+    "static/js/main.f4971e63.js"
   ]
 }
