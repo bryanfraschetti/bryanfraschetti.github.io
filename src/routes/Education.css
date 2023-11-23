@@ -1,0 +1,15 @@
+#uow{
+    background: url("/src/assets/uow.jpg");
+    background-size: contain;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-color: #cecece;
+}
+
+#acs{
+    background: url("/src/assets/acs.png");
+    background-size: contain;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-color: rgb(75, 128, 2);
+}

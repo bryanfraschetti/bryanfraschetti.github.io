@@ -1,0 +1,32 @@
+#vistracks{
+    background: url("/src/assets/qdts/vistracksLogo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#GPS-webapp{
+    background: url("/src/assets/qdts/openlayers/colors.gif");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #f5f5dc;
+}
+
+#dealers-webapp{
+    background: url("/src/assets/qdts/dealers.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#vmbhyve{
+    background: url("/src/assets/qdts/server-virtualization.jpg");
+    background-size: contain;
+    /* background-position: center; */
+    /* background-repeat: no-repeat; */
+    background-color: black;
+}
+
+#iot-comm{
+    background: url("/src/assets/qdts/iot.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+}

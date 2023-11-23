@@ -1,36 +1,22 @@
-body.modal-open {
-    overflow: hidden;
-    /* position: fixed; */
-}
-
 .my-header{
     text-align: center;
     font-size: 2rem;
     font-weight: 400;
 }
 
-.my-card{
-    width: 420px;
-    height: 280px;
-    border: 0px;
-    transition: filter 0.3s ease-in-out;
-    overflow: hidden;
-}
-
-.my-card:hover{
-    cursor: pointer;
-}
 
 #gesture-recognition{
-    background: url("/src/assets/arc.png");
-    background-size: 420px 280px;
+    background: url("/src/assets/hfgr/kf.gif");
+    background-size: contain;
     background-repeat: no-repeat;
-    background-color: white;
+    background-color: rgb(190, 190, 190);
 }
 
 #Sequence{
-    background: url("/src/assets/Sequence.png");
-    background-size: cover;
+    background: url("/src/assets/Sequence/index.gif");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #15111A;
 }
 
 #my-site{
@@ -38,65 +24,7 @@ body.modal-open {
     background-size: cover;
 }
 
-.bubble {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: rgba(200,200,200,0.6);
-    border-radius: 50%;
-    pointer-events: none;
-    animation: bubbleAnimation 1s ease-out;
-  }
-  
-  @keyframes bubbleAnimation {
-    to {
-      transform: scale(40);
-      opacity: 0;
-    }
-  }
-
-.short-info{
-    background-color: rgba(0,0,0,0.85);
-    color: var(--main-font-color);
-    height: 120px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    border-bottom-left-radius: var(--bs-border-radius);
-    border-bottom-right-radius: var(--bs-border-radius);
-}
-
-.card-body{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    width: 100%;
-    padding: 0px;
-    color: var(--main-font-color);
-    position: relative;
-    overflow: hidden;
-}
-
-.card-title{
-    padding: 15px 0px 0px 15px;
-    margin: 0px;
-}
-
-.icon-list-container{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 15px 10px 15px 10px;
-}
-
-.devicon{
-    padding: 0px 5px;
-}
-
-@media screen and (max-width: 600px) {
-    .my-card{
-        width: min(420px, calc(100vw - 60px));
-    }
+#FSAE{
+    background: url("/src/assets/fsae/eagle.png");
+    background-size: cover;
 }

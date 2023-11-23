@@ -5,7 +5,7 @@ const Modal = ({ id, onClose, children }) => {
   return (
     <div id={id} className="modal-overlay" onClick={onClose}>
     <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <span className="close-button" onClick={onClose} style={{color: "black"}}>
+        <span className="close-button" aria-label="close" onClick={onClose} style={{color: "white"}}>
         &times;
         </span>
         {children}

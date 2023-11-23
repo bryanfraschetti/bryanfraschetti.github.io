@@ -64,7 +64,7 @@ const Home = () => {
                             <span className='emphasized-text'> passion </span>
                             is illustrated through my
                             <span className='emphasized-text'> dedicated </span>
-                            work ethic as I fully engage myself in problem solving.
+                            work ethic as I fully engage in solving problems.
                             While I am
                             <span className='emphasized-text'> analytical</span>, 
                             I remain 
@@ -80,8 +80,8 @@ const Home = () => {
                             in <span className='emphasized-text'>full stack</span> and 
                             <span className='emphasized-text'> machine learning</span> software development.
                             I have created multiple 
-                            <span className='emphasized-text'> production-grade </span> applications, wherein I experienced the
-                            <span className='emphasized-text'> CI/CD </span>application lifecycle. From
+                            <span className='emphasized-text'> production-grade </span> programs, wherein I experienced the  
+                            application<span className='emphasized-text'> lifecycle </span> at all stacks. From
                             feature extraction, to creating virtualizations, to networking, to front-end design, I've enjoyed it all.
                             
                         </p>
