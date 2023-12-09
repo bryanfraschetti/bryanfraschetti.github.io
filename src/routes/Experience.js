@@ -92,7 +92,7 @@ const Experience = () => {
         <div>
             <Modal id={"vistracks-modal"} onClose={()=> handleCloseModal("vistracks-modal")}>
                 <div className="carousel-holder">
-                    <img src={vistracksLogo} style={{marginBottom: "20px", backgroundColor: "lightblue"}} alt="VisTracks logo"></img>
+                    <img src={vistracksLogo} style={{marginBottom: "20px", backgroundColor: "lightblue", width: "60%"}} alt="VisTracks logo"></img>
                     <div style={{width: "90%"}}>
                         <p><b className="keys">Summary: </b>
                             I developed software that <span className='accent-text'> integrated </span>
@@ -288,22 +288,30 @@ const Experience = () => {
                 <p style={{textAlign: "center", margin: "25px 0px 10px 0px", fontWeight: 300, fontSize: "1rem"}} className='emphasized-text'>Click on any project to learn more</p>
                 <div className='card-container' style={{width: "100vw"}}>
 
-                    <Card style={{backgroundColor: "lightblue"}} id="vistracks" alt="Vistracks logo" className='my-card' onMouseEnter={handleHover} onMouseLeave={handleUnhover}>
-                        <Card.Body onClick={()=> handleOpenModal("vistracks-modal")} onTouchStart={handleTouchStart}>
-                            <div className="short-info">
-                                <Card.Title>VisTracks API Integrations</Card.Title>
+                    <Card id="dealers-webapp" alt="Background showing login page of the webapp" className='my-card' onMouseEnter={handleHover} onMouseLeave={handleUnhover}>
+                        <Card.Body onClick={()=> handleOpenModal("dealers-webapp-modal")} onTouchStart={handleTouchStart}> <div className="short-info">
+                                <Card.Title>Information and Order Portal</Card.Title>
                                 <div className='icon-list-container'>
                                     <div className='devicon'>
-                                        <PythonOriginal size={"20"} alt="Python logo"></PythonOriginal>
+                                        <NginxOriginal size={"40"} alt="Nginx Logo"></NginxOriginal>
                                     </div>
                                     <div className='devicon'>
-                                        <img src={putty} height={"20px"} alt="PuTTY logo"></img>
+                                        <img src={pyramid} height={"20px"} alt="Pyramid WSGI logo"></img>
                                     </div>
                                     <div className='devicon'>
-                                        <FaFreebsd size={"20"} color="rgb(128,0,0)" alt="FreeBSD logo"></FaFreebsd>
+                                        <PythonOriginal size={"20"} alt="Python logo" className='python'></PythonOriginal>
                                     </div>
                                     <div className='devicon'>
-                                        <VimOriginal size={"20"} alt="vim logo"></VimOriginal>
+                                        <MysqlOriginal size={"20"} alt="MySQL logo"></MysqlOriginal>
+                                    </div>
+                                    <div className='devicon'>
+                                        <JavascriptOriginal size={"20"} alt="JS logo"></JavascriptOriginal>
+                                    </div>
+                                    <div className='devicon'>
+                                        <SiJinja size={"20"} alt="Jinja logo"></SiJinja>
+                                    </div>
+                                    <div className='devicon'>
+                                        <Css3Original size={"20"} alt="CSS logo"></Css3Original>
                                     </div>
                                 </div>
                             </div>
@@ -320,7 +328,7 @@ const Experience = () => {
                                         <img src={pyramid} height={"20px"} alt="Pyramid WSGI Logo"></img>
                                     </div>
                                     <div className='devicon'>
-                                        <PythonOriginal size={"20"} alt="Python logo"></PythonOriginal>
+                                        <PythonOriginal size={"20"} alt="Python logo" className='python'></PythonOriginal>
                                     </div>
                                     <div className='devicon'>
                                         <MysqlOriginal size={"20"} alt="MySQL logo"></MysqlOriginal>
@@ -330,9 +338,6 @@ const Experience = () => {
                                     </div>
                                     <div className='devicon'>
                                         <SiJinja size={"20"} alt="Jinja logo"></SiJinja>
-                                    </div>
-                                    <div className='devicon'>
-                                        <Css3Original size={"20"} alt="CSS logo"></Css3Original>
                                     </div>
                                     <div className='devicon'>
                                         <GitOriginal size={"20"} alt="Git logo"></GitOriginal>
@@ -341,30 +346,22 @@ const Experience = () => {
                             </div>
                         </Card.Body>
                     </Card>
-                    <Card id="dealers-webapp" alt="Background showing login page of the webapp" className='my-card' onMouseEnter={handleHover} onMouseLeave={handleUnhover}>
-                        <Card.Body onClick={()=> handleOpenModal("dealers-webapp-modal")} onTouchStart={handleTouchStart}> <div className="short-info">
-                                <Card.Title>Information and Order Portal</Card.Title>
+                    <Card style={{backgroundColor: "lightblue"}} id="vistracks" alt="Vistracks logo" className='my-card' onMouseEnter={handleHover} onMouseLeave={handleUnhover}>
+                        <Card.Body onClick={()=> handleOpenModal("vistracks-modal")} onTouchStart={handleTouchStart}>
+                            <div className="short-info">
+                                <Card.Title>VisTracks API Integrations</Card.Title>
                                 <div className='icon-list-container'>
                                     <div className='devicon'>
-                                        <NginxOriginal size={"40"} alt="Nginx Logo"></NginxOriginal>
+                                        <PythonOriginal size={"20"} alt="Python logo" className='python'></PythonOriginal>
                                     </div>
                                     <div className='devicon'>
-                                        <img src={pyramid} height={"20px"} alt="Pyramid WSGI logo"></img>
+                                        <img src={putty} height={"20px"} alt="PuTTY logo"></img>
                                     </div>
                                     <div className='devicon'>
-                                        <PythonOriginal size={"20"} alt="Python logo"></PythonOriginal>
+                                        <FaFreebsd size={"20"} color="rgb(128,0,0)" alt="FreeBSD logo"></FaFreebsd>
                                     </div>
                                     <div className='devicon'>
-                                        <MysqlOriginal size={"20"} alt="MySQL logo"></MysqlOriginal>
-                                    </div>
-                                    <div className='devicon'>
-                                        <JavascriptOriginal size={"20"} alt="JS logo"></JavascriptOriginal>
-                                    </div>
-                                    <div className='devicon'>
-                                        <SiJinja size={"20"} alt="Jinja logo"></SiJinja>
-                                    </div>
-                                    <div className='devicon'>
-                                        <Css3Original size={"20"} alt="CSS logo"></Css3Original>
+                                        <VimOriginal size={"20"} alt="vim logo"></VimOriginal>
                                     </div>
                                 </div>
                             </div>
@@ -395,7 +392,7 @@ const Experience = () => {
                                 <Card.Title>IoT Device Communications</Card.Title>
                                 <div className='icon-list-container'>
                                     <div className='devicon'>
-                                        <PythonOriginal size={"20"} alt="Python logo"></PythonOriginal>
+                                        <PythonOriginal size={"20"} alt="Python logo" className='python'></PythonOriginal>
                                     </div>
                                 </div>
                             </div>

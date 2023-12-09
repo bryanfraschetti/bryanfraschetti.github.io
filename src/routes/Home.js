@@ -109,6 +109,19 @@ const Home = () => {
                 </div>
                 <RevealComponent>
                     <div className='row-flex-center'>
+                        {/*
+                            weird devicons bug where both python and matlab use url(#a) and url(#b)
+                            for svg styling. whichever is first in dom takes priority
+
+                            forced to overwrite python colors since their logo
+                            colours are publicly available and matlabs arent
+
+                            therefore i have to load matlab first, but if i do display none it never renders
+                            and updates the urls so i have to render it as size 0
+                        */}
+                        <div>
+                            <MatlabOriginal size={0} alt="MATLAB"></MatlabOriginal>
+                        </div>
                         <div>
                             <JavascriptOriginal size={70} className="my-tools-icons" alt="Javascript"></JavascriptOriginal>
                         </div>
@@ -122,7 +135,7 @@ const Home = () => {
                             <ReactOriginal size={70} className="my-tools-icons" alt="ReactJS"></ReactOriginal>
                         </div>
                         <div>
-                            <PythonOriginal size={70} className="my-tools-icons" alt="Python"></PythonOriginal>
+                            <PythonOriginal size={70} className="my-tools-icons python" alt="Python"></PythonOriginal>
                         </div>
                         <div>
                             <NginxOriginal size={70} className="my-tools-icons" alt="NginX"></NginxOriginal>

@@ -9,7 +9,7 @@
     background: url("/src/assets/hfgr/kf.gif");
     background-size: contain;
     background-repeat: no-repeat;
-    background-color: rgb(190, 190, 190);
+    background-color: rgb(210, 210, 210);
 }
 
 #Sequence{
@@ -19,12 +19,28 @@
     background-color: #15111A;
 }
 
+#PCA{
+    background: url("/src/assets/pca/basis-functions.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 #my-site{
-    background: url("/src/assets/my-site.png");
+    background: url("/src/assets/portfolio/my-site.png");
     background-size: cover;
 }
 
 #FSAE{
     background: url("/src/assets/fsae/eagle.png");
     background-size: cover;
+}
+
+@media screen and (max-width: 500px) {
+    #gesture-recognition{
+        background: url("/src/assets/hfgr/kf.gif");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: rgb(210, 210, 210);
+    }
+
 }

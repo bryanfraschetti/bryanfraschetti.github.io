@@ -11,5 +11,18 @@
     background-size: contain;
     background-position: top;
     background-repeat: no-repeat;
-    background-color: rgb(75, 128, 2);
+    background-color: #AEA4A3;
+}
+
+#controller-design{
+    background: url("/src/assets/phase\ controller/hardware.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: black;
+}
+
+#svm{
+    background: url("/src/assets/svm/feasibleRegion.jpg");
+    background-size: contain;
+    background-position: 20px -45px;
 }
