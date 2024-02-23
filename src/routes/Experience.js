@@ -234,12 +234,13 @@ const Experience = () => {
                             <b className="keys">Technical Details: </b> 
                             Nominatim offers the reverse address lookup service online, however, it enforces rate limits 
                             on requests by IP. 
-                            To avoid limitations, I installed the app was installed from prebuilt Ubuntu
-                            <span className='accent-text'> binaries</span> 
+                            To avoid limitations, and operate with an optimized build, I installed a 
+                            local copy from prebuilt Ubuntu
+                            <span className='accent-text'> binaries</span>, 
                             which 
-                            <span className='accent-text'> necessitated</span>
-                            a virtual machine as the server's host OS was FreeBSD. I then created a server on the VM to 
-                            host the Nominatim installation so that it could be 
+                            <span className='accent-text'> necessitated </span>
+                            a virtual machine as the server's host OS was FreeBSD. I then created an internal server 
+                            on the VM to host the Nominatim installation so that it could be 
                             <span className='accent-text'> queried </span>
                             from the host OS.
                         </p>
@@ -271,7 +272,8 @@ const Experience = () => {
                             I used Python's socket module to 
                             <span className='accent-text'> establish </span>
                             a listening node for incoming communication from 
-                            remote devices (in particular the Pacific Tracker 40), processed the incoming data, forwarded 
+                            remote devices (in particular the Pacific Track PT40), processed the incoming data, 
+                            <span className='accent-text'> forwarded </span> 
                             requests to the Nominatim server I created (see Ubuntu Virtualization section), wrote information 
                             to databases, log files, and custom-structured geoJSON files for other applications to easily access 
                             <span className='accent-text'> business-critical </span> 

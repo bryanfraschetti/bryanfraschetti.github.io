@@ -227,10 +227,10 @@ ul{
 }
 
 .carousel-control-prev, .carousel-control-next{
-    background: linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,0.4));
+    background: linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,0.7));
 }
 .carousel-control-next{
-    background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.4));
+    background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.7));
 }
 
 .carousel-caption{
@@ -244,6 +244,18 @@ to restyle the svg and keep it true to the logo*/
     fill: #ffd343;
 }
 
+.python :nth-last-child(2){
+    fill: rgba(0,0,0,0)
+}
+
 .python :nth-last-child(4){
     fill: #306998;
+}
+
+.matlab path:nth-child(3){
+    fill: #5C3A4B;
+}
+
+.matlab path:nth-child(4){
+    fill: #e95d2b;
 }

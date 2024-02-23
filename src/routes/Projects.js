@@ -1,468 +1,982 @@
 import { Card, Carousel } from "react-bootstrap";
 
-import { CplusplusPlain, Css3Original, DeviconsReactOriginal, GitOriginal, Html5Original, JavascriptOriginal, MatlabOriginal, NumpyOriginal, OpencvOriginal, PythonOriginal, ReactOriginal, TensorflowOriginal, UbuntuPlain} from "devicons-react";
-import { SiAntdesign, SiAutodesk, SiEagle, SiExpress, SiLtspice, SiScikitlearn } from "react-icons/si";
+import {
+  CplusplusPlain,
+  CsharpOriginal,
+  Css3Original,
+  DockerOriginal,
+  DotNetOriginal,
+  GitOriginal,
+  JavascriptOriginal,
+  MatlabOriginal,
+  NumpyOriginal,
+  OpencvOriginal,
+  PandasOriginal,
+  PythonOriginal,
+  ReactOriginal,
+  TensorflowOriginal,
+  UbuntuPlain,
+} from "devicons-react";
+import {
+  SiAntdesign,
+  SiAutodesk,
+  SiEagle,
+  SiExpress,
+  SiLtspice,
+  SiScikitlearn,
+} from "react-icons/si";
 import { FaGithub, FaNodeJs } from "react-icons/fa";
-import librosa from "../assets/icons/librosa.png"
+import librosa from "../assets/icons/librosa.png";
 // import rosLogo from "../assets/icons/Ros_logo.svg";
 // import kivyLogo from "../assets/icons/kivy.svg";
 // import XtensorLogo from "../assets/icons/Xtensor_logo.svg";
 import ReactBootstrapLogo from "../assets/icons/react-bootstrap.svg";
 
-import SequenceHomePage from "../assets/Sequence/index.gif"
-import SequenceMain from "../assets/Sequence/main-empty.png"
-import SequenceUI from "../assets/Sequence/main-ui.gif"
-import SequenceLoading from "../assets/Sequence/loading.gif"
+import SequenceHomePage from "../assets/Sequence/index.gif";
+import SequenceCarousel from "../assets/Sequence/carousel.gif";
+import SequenceUI from "../assets/Sequence/main-ui.gif";
+import SequenceLoading from "../assets/Sequence/loading.gif";
 
-import bases from "../assets/pca/basis-functions.png"
-import original from "../assets/pca/original.png"
-import reconstructed from "../assets/pca/reconstructed.png"
+import bases from "../assets/pca/basis-functions.png";
+import original from "../assets/pca/original.png";
+import reconstructed from "../assets/pca/reconstructed.png";
 
-import kf from "../assets/hfgr/kf.gif"
-import ks from "../assets/hfgr/ks.gif"
-import transientKF from "../assets/hfgr/transient-kf.png"
-import transientKS from "../assets/hfgr/transient-ks.png"
-import features from "../assets/hfgr/features.gif"
-import lossCurve from "../assets/hfgr/loss-curve.jpg"
-import accCurve from "../assets/hfgr/accuracy-curve.jpg"
-import variance from "../assets/hfgr/variance.png"
+import kf from "../assets/hfgr/kf.gif";
+import ks from "../assets/hfgr/ks.gif";
+import transientKF from "../assets/hfgr/transient-kf.png";
+import transientKS from "../assets/hfgr/transient-ks.png";
+import features from "../assets/hfgr/features.gif";
+import lossCurve from "../assets/hfgr/loss-curve.jpg";
+import accCurve from "../assets/hfgr/accuracy-curve.jpg";
+import variance from "../assets/hfgr/variance.png";
 
-import portfolioHome from "../assets/portfolio/home.png"
-import aboutMe from "../assets/portfolio/aboutme.png"
-import projects from "../assets/portfolio/projects.png"
-import THIS from "../assets/portfolio/this.png"
+import portfolioHome from "../assets/portfolio/home.png";
+import aboutMe from "../assets/portfolio/aboutme.png";
+import projects from "../assets/portfolio/projects.png";
+import THIS from "../assets/portfolio/this.png";
 
-import circuit from "../assets/fsae/circuit.png"
-import eagle from "../assets/fsae/eagle.png"
-import annotatedPlot from "../assets/fsae/Annotated Plot.png"
+import circuit from "../assets/fsae/circuit.png";
+import eagle from "../assets/fsae/eagle.png";
+import annotatedPlot from "../assets/fsae/Annotated Plot.png";
+import can from "../assets/fsae/can.jpg";
 
 import NavBar from "../components/NavBar";
 import Modal from "../components/Modal";
 import Footer from "../components/Footer";
 import Ghb from "../components/Ghb";
 
+import fileserver from "../assets/fileserver/fs.png";
+
+import cqtcdl from "../assets/audioinpainting/cdlcqt.png";
+
 import "./Projects.css";
 
 const Projects = () => {
-    let resizeTimer;
-    window.addEventListener("resize", () => {
-        document.body.classList.add("resize-animation-stopper");
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(() => {
-            document.body.classList.remove("resize-animation-stopper");
-        }, 400);
+  let resizeTimer;
+  window.addEventListener("resize", () => {
+    document.body.classList.add("resize-animation-stopper");
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      document.body.classList.remove("resize-animation-stopper");
+    }, 400);
+  });
+
+  // let scrollPosition;
+
+  // const disableBodyScroll = () => {
+  //     scrollPosition = window.scrollY;
+  //     document.body.style.position = 'fixed';
+  //     document.body.style.top = `-${scrollPosition}px`;
+  // };
+
+  // const enableBodyScroll = () => {
+  //     document.body.style.position = '';
+  //     document.body.style.top = '';
+  //     window.scrollTo({top: scrollPosition, left: 0, behavior: "instant"});
+  // };
+
+  function handleHover(event) {
+    const element = event.target.closest(".my-card");
+    element.classList.toggle("hovered");
+    const items = document.querySelectorAll(".my-card");
+    items.forEach((item) => {
+      item.style.filter = item.classList.contains("hovered")
+        ? "none"
+        : "blur(3px)";
     });
+  }
 
-    // let scrollPosition;
+  function handleUnhover(event) {
+    const items = document.querySelectorAll(".my-card");
+    items.forEach((item) => {
+      item.classList.remove("hovered");
+      item.style.filter = "none";
+    });
+  }
 
-    // const disableBodyScroll = () => {
-    //     scrollPosition = window.scrollY;
-    //     document.body.style.position = 'fixed';
-    //     document.body.style.top = `-${scrollPosition}px`;
-    // };
+  const handleOpenModal = (id) => {
+    // disableBodyScroll();
+    const MOI = document.getElementById(id); //modal of interest
+    MOI.style.left = "-50%";
+    MOI.children[0].classList.toggle("active");
+    const toBlur = document.getElementById("blur-on-modal");
+    toBlur.style.filter = "blur(3px)";
+  };
 
-    // const enableBodyScroll = () => {
-    //     document.body.style.position = '';
-    //     document.body.style.top = '';
-    //     window.scrollTo({top: scrollPosition, left: 0, behavior: "instant"});
-    // };
+  const handleCloseModal = (id) => {
+    const MOI = document.getElementById(id); //modal of interest
+    MOI.style.left = "-200%";
+    MOI.children[0].classList.toggle("active");
+    const toBlur = document.getElementById("blur-on-modal");
+    toBlur.style.filter = "none";
+    // enableBodyScroll()
+  };
 
-    function handleHover(event){
-        const element = event.target.closest(".my-card")
-        element.classList.toggle('hovered');
-        const items = document.querySelectorAll('.my-card');
-        items.forEach(item => {
-            item.style.filter = item.classList.contains("hovered") ? "none" : "blur(3px)"            
-        });
-    }
+  const handleTouchStart = (event) => {
+    const containerRef = event.target.closest(".card-body");
+    console.log(containerRef);
+    const boundingRect = containerRef.getBoundingClientRect();
+    const { clientX, clientY } = event.touches[0];
 
-    function handleUnhover(event){
-        const items = document.querySelectorAll('.my-card');
-        items.forEach(item => {
-            item.classList.remove("hovered")
-            item.style.filter = "none"            
-        });
-    }
+    const bubble = document.createElement("div");
+    bubble.className = "bubble";
+    bubble.style.left = `${clientX - boundingRect.left}px`;
+    bubble.style.top = `${clientY - boundingRect.top}px`;
 
-    const handleOpenModal = (id) => {
-        // disableBodyScroll();
-        const MOI = document.getElementById(id)//modal of interest
-        MOI.style.left = "-50%"
-        MOI.children[0].classList.toggle("active")
-        const toBlur = document.getElementById("blur-on-modal")
-        toBlur.style.filter = "blur(3px)"
-    };
-  
-    const handleCloseModal = (id) => {
-        const MOI = document.getElementById(id)//modal of interest
-        MOI.style.left = "-200%";
-        MOI.children[0].classList.toggle("active")
-        const toBlur = document.getElementById("blur-on-modal")
-        toBlur.style.filter = "none"
-        // enableBodyScroll()
-    };
+    containerRef.appendChild(bubble);
 
-    const handleTouchStart = (event) => {
-        const containerRef = event.target.closest(".card-body")
-        console.log(containerRef)
-        const boundingRect = containerRef.getBoundingClientRect()
-        const { clientX, clientY } = event.touches[0];
-    
-        const bubble = document.createElement('div');
-        bubble.className = 'bubble';
-        bubble.style.left = `${clientX - boundingRect.left}px`;
-        bubble.style.top = `${clientY - boundingRect.top}px`;
-    
-        containerRef.appendChild(bubble);
-    
-        setTimeout(() => {
-        containerRef.removeChild(bubble);
-        }, 1000);
-    }
+    setTimeout(() => {
+      containerRef.removeChild(bubble);
+    }, 1000);
+  };
 
-    return (
-        <div>
-            <Modal id={"sequence-modal"} onClose={()=> handleCloseModal("sequence-modal")}>
-                <div className="carousel-holder">
-                    <Carousel>
-                        <Carousel.Item>
-                            <img className="carousel-img" src={SequenceHomePage} alt="Home Page of an App I designed, called Sequence"></img>
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img className="carousel-img" src={SequenceMain} alt="Main Page of the app"></img>
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img className="carousel-img" src={SequenceUI} alt="Sequence's UI"></img>
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img className="carousel-img" src={SequenceLoading} alt="Loading Animation"></img>
-                        </Carousel.Item>
-                    </Carousel>
-                    <div style={{width: "90%"}}>
-                        <p><b className="keys">Summary: </b>
-                            Sequence is a web-app that I built which uses the Spotify API to 
-                            <span className="sequence-accent-text"> empower users </span>
-                            with the ability to reorganize, or <i>
-                            <span className="sequence-accent-text">resequence</span></i>,
-                            their playlists based on 
-                            <span className="sequence-accent-text"> music theory</span> and feature similarity.
-                        </p>
-                        <p><b className="keys">Status: </b><span className="sequence-accent-text"> Under Development</span>. 
-                            (Apr. 2022 - ?)
-                        </p>
-                        <p>
-                            <b className="keys">Technical Details: </b>
-                            The server uses NodeJS and ExpressJS
-                            to securely generate, exchange, and refresh
-                            tokens with the Spotify API away from the client. For scalability, 
-                            the tokens are transferred to the browser's local 
-                            storage so that subsequent requests, barring a token refresh, can be made directly 
-                            from the client to Spotify without bottlenecking my web-app. Authorization persistence 
-                            across sessions is 
-                            achieved through this same mechanism.
-                        </p>
-                        <p><b className="keys">Skills Learned: </b> Fetch API, Async/Await, Promises, XHR, OAuth, RESTful API,
-                            Secure Token Management, JSON, Bootstrap
-                        </p>
-                        <Ghb repo="https://github.com/bryanfraschetti/Sequence"></Ghb>
-                    </div>
-                </div>   
-            </Modal>
-            <Modal id={"pca-modal"} onClose={()=> handleCloseModal("pca-modal")}>
-                <div className="carousel-holder">
-                    <Carousel>
-                        <Carousel.Item>
-                            <img className="carousel-img" src={bases} alt="Basis spectrotemporal functions I determined through pca"></img>
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img className="carousel-img" src={original} alt="Basis spectrotemporal functions I determined through pca"></img>
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img className="carousel-img" src={reconstructed} alt="Basis spectrotemporal functions I determined through pca"></img>
-                        </Carousel.Item>
-                    </Carousel>
-                    <div style={{width: "90%"}}>
-                        <p>
-                            <b className="keys">Summary: </b>
-                            Inspired by Spotify's audio analysis endpoint,
-                            <a href="https://developer.spotify.com/documentation/web-api/reference/get-audio-analysis" className="accent-text"> see here</a>, 
-                            I decided to try and replicate their work. The objective was to compute spectrograms from music audio files, 
-                            <span className="accent-text"> decompose </span> 
-                            the songs 
-                            into short segments upon which PCA could be performed, and finally extract 
-                            <span className="accent-text"> spectrotemporal </span> surface feature
-                            <span className="accent-text"> bases</span>.
-                        </p>
-                        <p>
-                            <b className="keys">Status: </b><span className="accent-text">Complete</span> (Nov. 2023)
-                        </p>
-                        <p>
-                            <b className="keys">Technical Details: </b>
-                            It is widely known that the Fourier Transform is a powerful tool to compute the frequency composition of 
-                            a signal. However, while this can be useful for macroscopic properties of an audio file, all temporal information 
-                            is lost. The approach to solve this issue is to break the signal into overlapping frames, 
-                            applying a Hann window to each frame to mitigate spectral leakage, and then applying the 
-                            DFT locally. This process is called the Short-Time Fourier Transform, and is useful because it 
-                            maintains frequency and time resolution that can easily be modified by changing the frame size.
-                        </p>
-                        <p>
-                            Each STFT represents an (approximately) instantaneous frequency representation and the concatenation 
-                            of consecutive STFTs captures the evolution of the frequency distribution through time. This is called a spectrogram. 
-                            Humans generally perceive audio in 50ms chunks,
-                            <a href="https://web.media.mit.edu/~tristan/phd/dissertation/chapter3.html#x1-350003.3" target="_blank" rel="noreferrer" className="accent-text"> see source</a>, 
-                            and so it is logical to concatenate a number of STFTs such that the amount of time they cumulatively occupy is approximately 50ms. 
-                            Such a spectrogram would represent a single perceived sonic event. Dividing the computed spectrograms into 
-                            such segments allows for the comparison of sonic events via Principal Component Analysis by extracting 
-                            the fundamental features that comprise the segments. Using 60 songs, amounting to approximately 
-                            12,000,000 segments, I applied PCA and produced the spectrograms above, which are 
-                            extremely similar to the basis functions that Spotify produced (which can be seen under the timbre section 
-                            at the Spotify endpoint I linked at the beginning of this section). 
-                            It is worth noting that the 3 dimensional surfaces (2D matrices) corresponding to the segments 
-                            were flattened to produce 1 dimensional vectors upon which PCA was performed. The resultant basis vectors were then 
-                            reshaped back into the segment shape for visualization.
-                        </p>
-                        <p>
-                            Additionally, to benchmark the performance of my approach, I created a script that reconstructs 
-                            songs using my basis functions. This process involves decomposing a song into segments, 
-                            calculating the segment projection onto each basis function, 
-                            computing the linear combination of projections, 
-                            recombining the segments, then comparing the reconstruction 
-                            with the original signal under different error metrics. 
-                            Using only the 12 basis functions, which is effectively 
-                            equivalent to using 12 fundamental sounds, I was 
-                            able to reconstruct entire songs with an RMSE (root mean squared error) of only 4.2dB and 
-                            MAE (mean absolute error) of 2.2dB. The carousel shows an original song 
-                            and its reconstruction.
-                        </p>
-                        <p><b>Skills Learned: </b>  Windowing, STFT, PCA
-                            <Ghb repo="https://github.com/bryanfraschetti/audio-analysis"></Ghb>
-                        </p>
-                    </div>
-                </div>  
-            </Modal>
-            <Modal id={"gesture-recognition-modal"} onClose={()=> handleCloseModal("gesture-recognition-modal")}>     
-                <div className="carousel-holder">
-                    <Carousel>
-                        <Carousel.Item>
-                            <img className="carousel-img" src={kf} alt="Kick forward recognition"></img>
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img className="carousel-img" src={ks} alt="Kick sideways recognition"></img>
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img className="carousel-img" src={transientKF} alt="Plot of kick forward where colour represents time"></img>
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img className="carousel-img" src={transientKS} alt="Plot of kick forward where colour represents time"></img>
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img className="carousel-img" src={features} alt="Plot of some of the feature space"></img>
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img className="carousel-img" src={variance} alt="Plot of some other"></img>
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img className="carousel-img" src={accCurve} alt="Plot of the training accuracy curve"></img>
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img className="carousel-img" src={lossCurve} alt="Plot of training loss curve"></img>
-                        </Carousel.Item>
-                    </Carousel>
-                    <div style={{width: "90%"}}>
-                        <p><b className="keys">Summary: </b>
-                            My <span className="accent-text">capstone </span> project, wherein my team and I 
-                            integrated a mmWave radar with a camera in a <span className="accent-text">closed-loop 
-                            feature-based</span> recognition algorithm to successfully identify 
-                            hands-free gestures, such as 
-                            kicking forward and sideways, at a rate of <span className="accent-text"><b>90%</b></span>. 
-                            The target industry application is 
-                            <span className="accent-text"> improving </span>
-                            hands-free trunk opening capabilities by repurposing 
-                            the various sensors on a car and
-                            <span className="accent-text"> leveraging </span>
-                            their advantages.
-                        </p>
-                        <p><b className="keys">Status: </b><span className="accent-text">Complete</span> (Jan. 2023 - Aug. 2023)</p>
-                        <p>
-                            <b className="keys">Technical Details: </b>
-                            Broadly speaking, separate threads were executed in
-                            parallel for the processing of data from 
-                            each sensor. The radar data was passed through a TensorFlow Keras
-                            <span className="accent-text"> neural net</span>, that I designed 
-                            and trained based on features that exhibited strong
-                            <span className="accent-text"> clustering </span>by gesture class. The camera
-                            prediction involved
-                            <span className="accent-text"> object tracking </span>with OpenCV followed by trajectory comparison through 
-                            appropriating and repurposing the Needleman-Wunsch Algorithm, which is normally used for gene 
-                            sequencing. Based on certain features, <span className="accent-text"> SNR</span>, and prediction confidence, the results of radar and 
-                            camera were synthesized into one coherent prediction, displayed on a Kivy GUI. ROS was used 
-                            for thread management, synchronization, and communication between nodes. Unfortunately, the work 
-                            itself is protected and the repository cannot be shared.
-                        </p>
-                        <p><b>Skills Learned: </b> Feature Extraction, Neural Net Architecture, Early Stopping, 
-                            Edge Detection, Background Subtraction, Morphological Operations, ROS framework,
-                            Ubuntu Shell
-                        </p>
-                    </div>
-                </div>   
-            </Modal>
-            <Modal id={"my-site-modal"} onClose={()=> handleCloseModal("my-site-modal")}>
-                <div className="carousel-holder">
-                    <Carousel>
-                        <Carousel.Item>
-                            <img className="carousel-img" src={portfolioHome} alt="Home page of my portfolio site"></img>
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img className="carousel-img" src={aboutMe} alt="About me section of portfolio site"></img>
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img className="carousel-img" src={projects} alt="Project section of portfolio site"></img>
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img className="carousel-img" src={THIS} alt="This section of my portfolio site"></img>
-                        </Carousel.Item>
-                    </Carousel>
-                    <div style={{width: "90%"}}>
-                        <p>
-                            <b className="keys">Summary: </b>
-                            I built a <span className="accent-text">responsive</span> portfolio website to showcase my abilities and experience
-                        </p>
-                        <p>
-                            <b className="keys">Status: </b><span className="accent-text">Indefinite</span> work in progress (Est. Nov. 2023)
-                        </p>
-                        <p>
-                            <b className="keys">Technical Details: </b>
-                            The responsive design was achieved through React and React Bootstrap component libraries. 
-                            CSS was used for fine-tuning standard components to <span className="accent-text"> my 
-                            vision</span>, and gsap was used for some 
-                            <span className="accent-text"> custom</span> animations. Other animations such as the typing on the homepage was developed using
-                            custom React hooks. Git was used for version management, while <span className="accent-text"> delployments </span> were made via 
-                            Github Pages.
-                        </p>
-                        <p><b>Skills Learned: </b> React, Version Management, Deployment, Principles of Responsive Design
-                        </p>
-                        <Ghb repo="https://github.com/bryanfraschetti/bryanfraschetti.github.io"></Ghb>
-                    </div>
-                </div>  
-            </Modal>
-            <Modal id={"FSAE-modal"} onClose={()=> handleCloseModal("FSAE-modal")}>
-                <div className="carousel-holder">
-                    <Carousel>
-                        <Carousel.Item>
-                            <img className="carousel-img" src={eagle} alt="PCB Design in Eagle"></img>
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img className="carousel-img" src={circuit} alt="LTspice Circuit Used for Testing"></img>
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img className="carousel-img" src={annotatedPlot} alt="Plot of Simulation Testing the Circuit"></img>
-                        </Carousel.Item>
-                    </Carousel>
-                    <div style={{width: "90%"}}>
-                        <p>
-                            <b className="keys">Summary: </b>
-                            A teammate and I designed the Brake Systems Plausibility Device (BSPD) circuit for 
-                            the University of Windsor Formula Electric team.
-                        </p>
-                        <p>
-                            <b className="keys">Status: </b><span className="accent-text">Complete</span> (Oct. 2022 - Dec. 2022)
-                        </p>
-                        <p>
-                            <b className="keys">Technical Details: </b>
-                            The BSPD is a standalone <span className="accent-text"> non-programmable </span> safety circuit with 
-                            <span className="accent-text"> fault detection </span> that sends a shutdown signal to the engine when there is a 
-                            simultaneous demand for high power delivery to the engine and hard braking
-                            that lasts longer than 0.5 seconds. The brake pressure was converted into a voltage 
-                            using a pressure sensor, while power delivery was determined using a hall effect current sensor.
-                            A comparator was used to compare real-time signals against pre-determined thresholds to 
-                            produce a binary output. If both of these signals exceed their limits a capacitor whose 
-                            time constant is 0.1s (steady state achieved after 0.5s) begins charging. The voltage of the 
-                            capacitor is compared against its expected steady state to produce the signal sent to the engine.
-                            Additionally, the circuit offers <span className="accent-text"> open and short circuit 
-                            protection  </span> that triggers engine shutdown.
-                        </p>
-                        <p><b>Skills Learned: </b>  LTSpice, Eagle, Interfacing analog and digital circuitry
-                        </p>
-                    </div>
-                </div>  
-            </Modal>
-            <NavBar />
-            <div id='blur-on-modal'>
-                <h1 className='post-nav my-header'><span className="accent-text">Self-Directed </span>Projects</h1>
-                <p style={{textAlign: "center", margin: "25px 0px 10px 0px", fontWeight: 300, fontSize: "1rem"}} className='emphasized-text'>Click on any project to learn more</p>
-                <div className='card-container' style={{width: "100vw"}}>
-                    
-                <Card id="Sequence" alt="Background image showing a page of the website" className='my-card' onMouseEnter={handleHover} onMouseLeave={handleUnhover}>
-                        <Card.Body onClick={()=> handleOpenModal("sequence-modal")} onTouchStart={handleTouchStart}> <div className="short-info">
-                                <Card.Title>Sequence</Card.Title>
-                                <div className='icon-list-container'>
-                                    <div className='devicon'>
-                                        <FaNodeJs size={"20"} alt="NodeJS" style={{color: "#6cc24a"}}></FaNodeJs>
-                                    </div>
-                                    <div className="devicon">
-                                        <SiExpress size={"20"} alt="ExpressJS" style={{backgroundColor: "white", borderRadius: "4px", color: "black", padding: "0px 1px"}}></SiExpress>
-                                    </div>
-                                    <div className="devicon">
-                                        <ReactOriginal size={20} alt="ReactJs"></ReactOriginal>
-                                    </div>
-                                    <div className="devicon">
-                                        <SiAntdesign size={20} alt="ReactJs"></SiAntdesign>
-                                    </div>
-                                    <div className='devicon'>
-                                        <JavascriptOriginal size="20"></JavascriptOriginal>
-                                    </div>
-                                    <div className='devicon'>
-                                        <Html5Original size={"20"} alt="HTML"></Html5Original>
-                                    </div>
-                                    <div className='devicon'>
-                                        <Css3Original size={"20"} alt="CSS"></Css3Original>
-                                    </div>
-                                    {/* <div className='devicon'>
-                                        <FaBootstrap size={"20"} color="#563d7c" alt="Bootstrap"></FaBootstrap>
-                                    </div> */}
-                                    <div className='devicon'>
-                                        <GitOriginal size={"20"} alt="Git"></GitOriginal>
-                                    </div>
-                                </div>
-                            </div>
-                        </Card.Body>
-                    </Card>
-                    <Card id="gesture-recognition" alt="Background image showing data points used in analysis" className='my-card' onMouseEnter={handleHover} onMouseLeave={handleUnhover}>
-                        <Card.Body onClick={()=> handleOpenModal("gesture-recognition-modal")} onTouchStart={handleTouchStart}> <div className='short-info'>
-                                <Card.Title>Hands-Free Gesture Recognition</Card.Title>
-                                <div className='icon-list-container'>
-                                    <div>
-                                        {/*
-                                        weird devicons bug where both python and matlab use url(#a) and url(#b)
-                                        for svg styling. whichever is first in dom takes priority
+  return (
+    <div>
+      <Modal
+        id={"sequence-modal"}
+        onClose={() => handleCloseModal("sequence-modal")}
+      >
+        <div className="carousel-holder">
+          <Carousel>
+            <Carousel.Item>
+              <img
+                className="carousel-img"
+                src={SequenceHomePage}
+                alt="Home Page of an App I designed, called Sequence"
+              ></img>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="carousel-img"
+                src={SequenceCarousel}
+                alt="Main Page of the app"
+              ></img>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="carousel-img"
+                src={SequenceUI}
+                alt="Sequence's UI"
+              ></img>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="carousel-img"
+                src={SequenceLoading}
+                alt="Loading Animation"
+              ></img>
+            </Carousel.Item>
+          </Carousel>
+          <div style={{ width: "90%" }}>
+            <p>
+              <b className="keys">Summary: </b>
+              Sequence is a web-app that I built which uses the Spotify API to
+              <span className="sequence-accent-text"> empower users </span>
+              with the ability to reorganize, or{" "}
+              <i>
+                <span className="sequence-accent-text">resequence</span>
+              </i>
+              , their playlists based on
+              <span> music theory</span> and feature similarity.
+            </p>
+            <p>
+              <b className="keys">Status: </b>
+              <span> In progress </span>
+              (Apr. 2022 - ?)
+            </p>
+            <p>
+              <p>
+                <b className="keys">Technical Details: </b>
+                The server uses NodeJS and ExpressJS to securely generate,
+                exchange, and refresh tokens with the Spotify API away from the
+                client. For scalability, the tokens are transferred to the
+                browser's local storage so that subsequent requests, barring a
+                token refresh, can be made directly from the client to Spotify
+                without bottlenecking my web-app. Authorization persistence
+                across sessions is achieved through this same mechanism. The
+                front-end is built using React and AntDesign.
+              </p>
+              <p>
+                The production version of the app is instantiated by
+                containerizing the Node/Express server with a build of the React
+                App using Docker. The installation is minimal, storing only the
+                build products, with credentials stored in the process
+                environment, rather than a .env in the container.
+              </p>
+            </p>
+            <p>
+              <b className="keys">Skills Learned: </b> Docker, Containerization,
+              RESTful API, Secure Token Management, OAuth, Fetch API,
+              Async/Await, Promises, XHR, JSON, Bootstrap
+            </p>
+            <Ghb repo="https://github.com/bryanfraschetti/Sequence"></Ghb>
+          </div>
+        </div>
+      </Modal>
 
-                                        forced to overwrite python colors since their logo
-                                        colours are publicly available and matlabs arent
+      <Modal
+        id={"lan-fileserver-modal"}
+        onClose={() => handleCloseModal("lan-fileserver-modal")}
+      >
+        <div className="carousel-holder">
+          <Carousel>
+            <Carousel.Item>
+              <img
+                className="lan fileserver UI"
+                src={fileserver}
+                alt="User interface for interacting with the fileserver"
+              ></img>
+            </Carousel.Item>
+          </Carousel>
+          <div style={{ width: "90%" }}>
+            <p>
+              <b className="keys">Summary: </b>
+              Inspired to have secure file exchange between my devices without
+              utilizing a third party service nor being subject to file size
+              limits.
+            </p>
+            <p>
+              <b className="keys">Status: </b>
+              <span>In progress</span> (Feb. 2024 - ?)
+            </p>
+            <p>
+              <b className="keys">Technical Details: </b>
+              The file server is being hosted locally on my home network from a
+              Docker container running an ASP.NET instance that is virtually
+              mounted to an external hard drive with read/write privileges to
+              the hosted folder. The interface uses the Model-View-Controller
+              (MVC) API to aid in creating the interactive elements.
+            </p>
+            <p>
+              <b>Skills Learned: </b> C#, ASP.NET Framework
+            </p>
+            <Ghb repo="https://github.com/bryanfraschetti/LANFileServer"></Ghb>
+          </div>
+        </div>
+      </Modal>
 
-                                        therefore i have to load matlab first, but if i do display none it never renders
-                                        and updates the urls so i have to render it as size 0
-                                        */}
-                                        <MatlabOriginal size={0} alt="MATLAB"></MatlabOriginal>
-                                    </div>
-                                    <div className='devicon'>
-                                        <PythonOriginal size={"20"} alt="Python" className="python"></PythonOriginal>
-                                    </div>
-                                    <div className='devicon'>
-                                        <CplusplusPlain size={"20"} alt="C++"></CplusplusPlain>
-                                    </div>
-                                    <div>
-                                        <MatlabOriginal size={20} alt="MATLAB"></MatlabOriginal>
-                                    </div>
-                                    <div className='devicon'>
-                                        <TensorflowOriginal size={"20"} alt="TensorFlow"></TensorflowOriginal>
-                                    </div>
-                                    <div className='devicon'>
-                                        <NumpyOriginal size={"20"} alt="NumPy"></NumpyOriginal>
-                                    </div>
-                                    <div className='devicon'>
-                                        <OpencvOriginal size={"20"} alt="OpenCV"></OpencvOriginal>
-                                    </div>
-                                    {/*<div className='devicon'>
+      <Modal
+        id={"my-site-modal"}
+        onClose={() => handleCloseModal("my-site-modal")}
+      >
+        <div className="carousel-holder">
+          <Carousel>
+            <Carousel.Item>
+              <img
+                className="carousel-img"
+                src={portfolioHome}
+                alt="Home page of my portfolio site"
+              ></img>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="carousel-img"
+                src={aboutMe}
+                alt="About me section of portfolio site"
+              ></img>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="carousel-img"
+                src={projects}
+                alt="Project section of portfolio site"
+              ></img>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="carousel-img"
+                src={THIS}
+                alt="This section of my portfolio site"
+              ></img>
+            </Carousel.Item>
+          </Carousel>
+          <div style={{ width: "90%" }}>
+            <p>
+              <b className="keys">Summary: </b>I built a{" "}
+              <span className="accent-text">responsive</span> portfolio website
+              to showcase my abilities and experience
+            </p>
+            <p>
+              <b className="keys">Status: </b>
+              <span>Indefinite</span> work in progress (Est. Nov. 2023)
+            </p>
+            <p>
+              <b className="keys">Technical Details: </b>
+              The responsive design was achieved through React and React
+              Bootstrap component libraries. CSS was used for fine-tuning
+              standard components to my vision, and gsap was used to personalize
+              several animations. Other animations, including the typing on the
+              homepage were developed using custom React hooks. Git was used for
+              version management, while deployments were made via Github Pages.
+            </p>
+            <p>
+              <b>Skills Learned: </b> React, Version Management, Deployment,
+              Principles of Responsive Design
+            </p>
+            <Ghb repo="https://github.com/bryanfraschetti/bryanfraschetti.github.io"></Ghb>
+          </div>
+        </div>
+      </Modal>
+
+      <Modal
+        id={"gesture-recognition-modal"}
+        onClose={() => handleCloseModal("gesture-recognition-modal")}
+      >
+        <div className="carousel-holder">
+          <Carousel>
+            <Carousel.Item>
+              <img
+                className="carousel-img"
+                src={kf}
+                alt="Kick forward recognition"
+              ></img>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="carousel-img"
+                src={ks}
+                alt="Kick sideways recognition"
+              ></img>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="carousel-img"
+                src={transientKF}
+                alt="Plot of kick forward where colour represents time"
+              ></img>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="carousel-img"
+                src={transientKS}
+                alt="Plot of kick forward where colour represents time"
+              ></img>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="carousel-img"
+                src={features}
+                alt="Plot of points in a lower dimension of the feature space where the axes are related to object velocities"
+              ></img>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="carousel-img"
+                src={variance}
+                alt="Plot of points in a lower dimension of feature space where axes are related to positional variance"
+              ></img>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="carousel-img"
+                src={accCurve}
+                alt="Plot of the training accuracy curve"
+              ></img>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="carousel-img"
+                src={lossCurve}
+                alt="Plot of training loss curve"
+              ></img>
+            </Carousel.Item>
+          </Carousel>
+          <div style={{ width: "90%" }}>
+            <p>
+              <b className="keys">Summary: </b>
+              My capstone project, wherein my team and I integrated a mmWave
+              radar with a camera in a
+              <span className="accent-text"> closed-loop feature-based </span>
+              recognition algorithm to successfully identify hands-free
+              gestures, such as kicking forward and sideways, at a rate of{" "}
+              <b>90%</b>. The target industry application is
+              <span className="accent-text"> improving </span>
+              hands-free trunk opening capabilities by repurposing the various
+              sensors on a car and
+              <span className="accent-text"> leveraging </span>
+              their strengths.
+            </p>
+            <p>
+              <b className="keys">Status: </b>
+              Complete (Jan. 2023 - Aug. 2023)
+            </p>
+            <p>
+              <b className="keys">Technical Details: </b>
+              Broadly speaking, separate threads were executed in parallel for
+              the processing of data from each sensor. The radar data was passed
+              through a TensorFlow Keras neural net, designed and trained based
+              on features that exhibited strong clustering by gesture class.
+              Gesture prediction based on camera data involved using OpenCV to
+              create object tracking algorithms followed by trajectory
+              comparison through appropriating the Needleman-Wunsch Algorithm
+              (which is normally used to determine optimal gene sequencing).
+              Based on certain features, SNR, and prediction confidence, the
+              results of radar and camera were synthesized into one coherent
+              prediction, displayed on a Kivy GUI. ROS was used for thread
+              management, synchronization, and communication between nodes.
+              Unfortunately, the work itself is protected and the repository
+              cannot be shared.
+            </p>
+            <p>
+              <b>Skills Learned: </b> Feature Extraction, Neural Net
+              Architecture, Supervised Learning, Early Stopping, Edge Detection,
+              Background Subtraction, Morphological Operations, ROS framework,
+              Bash
+            </p>
+          </div>
+        </div>
+      </Modal>
+
+      <Modal
+        id={"audio-inpainting-modal"}
+        onClose={() => handleCloseModal("audio-inpainting-modal")}
+      >
+        <div className="carousel-holder">
+          <Carousel>
+            <Carousel.Item>
+              <img
+                className="carousel-img"
+                src={cqtcdl}
+                alt="CQT generated from a song"
+              ></img>
+            </Carousel.Item>
+          </Carousel>
+          <div style={{ width: "90%" }}>
+            <p>
+              <b className="keys">Summary: </b>
+              My colleague, Gian Favero, and I are working on a generative
+              machine learning model which creates instrument based audio
+              contextualized to an existing audio file. The purpose is to
+              introduce a new instrument to a song in a cohesive way such that
+              the new instrument augments the original audio while maintaining
+              the integrity of the original feeling of the song.
+            </p>
+            <p>
+              <b className="keys">Status: </b>
+              <span>In progress</span> (Jan. 2024 - ?)
+            </p>
+            <p>
+              <b className="keys">Technical Details: </b>
+              There are numerous challenges to be overcome in order to generate
+              natural instrument audio derived from other audio. The first
+              challenge is instrument isolation. In order to generate audio that
+              resembles an instrument, the model must learn the sound of each
+              instrument. Otherwise undesired instrument channels will bleed
+              into the generated audio, creating unwanted artifacts. To
+              accomplish instrument isolation, we used the state of the art
+              Demucs audio isolation library (
+              <a
+                href="https://github.com/facebookresearch/demucs"
+                className="accent-text"
+                target="_blank"
+                rel="noreferrer"
+              >
+                see here
+              </a>
+              ).
+            </p>
+            <p>
+              Another challenge, which happens to be two pronged in nature, is
+              processing the audio. Firstly, there is an immense amount of data
+              in one song, let alone a dataset of songs. Secondly, an individual
+              audio sample is not very informative or representative of the
+              sound or feel of a song. For a human interpretation, we need to
+              represent audio in a feature space that contains frequency and
+              temporal information in such a way that it captures the sonic
+              experience. To solve both of these issues, we use PCA on the
+              dataset of audio to obtain a latent basis upon which we can
+              project and interpret audio (see my project called Spectrogram
+              PCA). This allows audio to not only be represented in a meaningful
+              capacity but also allows for a reduction in the data to be
+              processed. To illustrate this, 50ms of audio sampled at 44.1kHz as
+              16 bit PCM (.wav) requires 16000 bytes of data. Projecting on a
+              latent space representation with 100 feature bases allows the same
+              audio to be reconstructed with 1600 bytes.
+            </p>
+            <p>
+              A notable change from the Spectrogram PCA project is that rather
+              than using STFTs, we use the Constant Q Transform which has the
+              advantage of non-linear frequency binning - allowing for better
+              frequency resolution and reconstruction in the lower end of the
+              spectrum such as vocals, drums, bass, and most instruments.
+              Additionally, we will try training an auto encoding model to
+              compare the latent space reduction to that of PCA.
+            </p>
+            <p>
+              The plan is to compute the timbre projections of different
+              instrument channels and train the relationship between the
+              projections of one instrument to the superposition of the timbre
+              projections of the other channels through a convolutional DDPM
+              U-Net. The superposition of timbre projections corresponds to
+              elementwise addition of sinusoids based on frequency, which is
+              functionally equivalent to the superposition of soundwaves.
+            </p>
+            <p>
+              <b>Skills Learned: </b> CQT, Auto encoding, U-Net, DDPM
+            </p>
+            <Ghb repo="https://github.com/faverogian/audio-inpainting"></Ghb>
+          </div>
+        </div>
+      </Modal>
+
+      <Modal id={"pca-modal"} onClose={() => handleCloseModal("pca-modal")}>
+        <div className="carousel-holder">
+          <Carousel>
+            <Carousel.Item>
+              <img
+                className="carousel-img"
+                src={bases}
+                alt="Basis spectrotemporal functions I determined through pca"
+              ></img>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="carousel-img"
+                src={original}
+                alt="Basis spectrotemporal functions I determined through pca"
+              ></img>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="carousel-img"
+                src={reconstructed}
+                alt="Basis spectrotemporal functions I determined through pca"
+              ></img>
+            </Carousel.Item>
+          </Carousel>
+          <div style={{ width: "90%" }}>
+            <p>
+              <b className="keys">Summary: </b>
+              Inspired by Spotify's audio analysis endpoint,
+              <a
+                href="https://developer.spotify.com/documentation/web-api/reference/get-audio-analysis"
+                className="sequence-accent-text"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {" "}
+                see here
+              </a>
+              , I decided to try and replicate their work. The objective was to
+              compute spectrograms from musical audio files, decompose the songs
+              into short segments upon which PCA could be performed to
+              ultimately extract{" "}
+              <span className="sequence-accent-text">
+                spectrotemporal surface feature bases.
+              </span>
+            </p>
+            <p>
+              <b className="keys">Status: </b>
+              <span>Complete</span> (Nov. 2023)
+            </p>
+            <p>
+              <b className="keys">Technical Details: </b>
+              It is widely known that the Fourier Transform is a powerful tool
+              to compute the frequency composition of a signal. However, while
+              this can be useful to identify the
+              <span className="sequence-accent-text"> macroscopic </span>
+              properties of an audio file, temporal information cannot be
+              inferred in the frequency-domain. The approach to solve this issue
+              is to break the signal into overlapping frames, applying a Hann
+              window to each frame to mitigate spectral leakage, and then
+              applying the DFT{" "}
+              <span className="sequence-accent-text"> locally. </span> This
+              process is called the Short-Time Fourier Transform and it not only
+              maintains frequency and time information but additionally provides
+              control over the resolutions of both as they can be easily
+              modified by changing the frame size.
+            </p>
+            <p>
+              Each STFT represents an (approximately) instantaneous frequency
+              representation and the concatenation of consecutive STFTs captures
+              the evolution of the frequency distribution through time. This is
+              called a spectrogram. Humans generally perceive audio in 50ms
+              chunks,
+              <a
+                href="https://web.media.mit.edu/~tristan/phd/dissertation/chapter3.html#x1-350003.3"
+                target="_blank"
+                rel="noreferrer"
+                className="sequence-accent-text"
+              >
+                {" "}
+                see here
+              </a>
+              , and so it is logical to concatenate a number of STFTs such that
+              the amount of time they cumulatively occupy is approximately 50ms.
+              Such a spectrogram would represent a single perceived sonic event.
+              Dividing the computed spectrograms into such segments allows for
+              the comparison of sonic events via Principal Component Analysis,
+              which extracts the fundamental features that comprise the
+              segments.
+            </p>
+            <p>
+              Using MUSDB, amounting to approximately
+              <span className="sequence-accent-text"> 630,000 segments,</span> I
+              applied IPCA (Incremental PCA - allows for processing in batches
+              rather than loading the whole dataset) and produced the
+              spectrograms above, which are extremely similar to the basis
+              functions that Spotify produced. It is worth noting that the 3
+              dimensional surfaces (2D matrices) corresponding to the segments
+              were flattened to produce 1 dimensional vectors upon which PCA was
+              performed. The resultant basis vectors were then reshaped back
+              into the segment shape for visualization.
+            </p>
+            <p>
+              Additionally, to benchmark the performance of my approach, I
+              created a script that reconstructs songs using my basis functions.
+              This process involves decomposing a song into segments,
+              calculating the segment projection onto each basis function,
+              computing the linear combination of projections, concatenating the
+              segments, then comparing the result with the original signal under
+              different error metrics. Using only the 12 basis functions, which
+              is effectively equivalent to building a song from only 12
+              different sounds, I was able to reconstruct entire songs with an
+              RMSE (root mean squared error) of only 4.2dB and MAE (mean
+              absolute error) of 2.2dB. The carousel shows an original song and
+              its reconstruction. Using 100 basis functions, which is equivalent
+              to 32kbps including phase bases (
+              <span className="sequence-accent-text">90% compression </span>
+              relative to a low quality WAV file, which have bitrates of
+              320kbps) an RMSE of less than 2dB was achieved.
+            </p>
+            <p>
+              <b>Skills Learned: </b> Windowing, STFT, PCA, IPCA
+            </p>
+            <Ghb repo="https://github.com/bryanfraschetti/audio-analysis"></Ghb>
+          </div>
+        </div>
+      </Modal>
+
+      <Modal id={"FSAE-modal"} onClose={() => handleCloseModal("FSAE-modal")}>
+        <div className="carousel-holder">
+          <Carousel>
+            <Carousel.Item>
+              <img
+                className="carousel-img"
+                src={eagle}
+                alt="PCB Design in Eagle"
+              ></img>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="carousel-img"
+                src={circuit}
+                alt="LTspice Circuit Used for Testing"
+              ></img>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="carousel-img"
+                src={annotatedPlot}
+                alt="Plot of Simulation Testing the Circuit"
+              ></img>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="carousel-img"
+                src={can}
+                alt="ESP32s Wired over CAN bus on a breadboard"
+              ></img>
+            </Carousel.Item>
+          </Carousel>
+          <div style={{ width: "90%" }}>
+            <p>
+              <b className="keys">Summary: </b>A teammate and I
+              <span className="accent-text"> desgined </span> the Brake Systems
+              Plausibility Device (BSPD) circuit for the University of Windsor
+              Formula Electric team and worked with ESP32s, Arduino IDE, and
+              PlatformIO to develop communication systems over{" "}
+              <span className="accent-text"> CAN </span> protocol.
+            </p>
+            <p>
+              <b className="keys">Status: </b>
+              <span>Complete</span> (Oct. 2022 - Dec. 2022)
+            </p>
+            <p>
+              <b className="keys">Technical Details: </b>
+              The BSPD is a standalone non-programmable safety circuit with
+              fault detection that sends a shutdown signal to the engine when
+              there is a simultaneous demand for high power delivery to the
+              engine and hard braking that lasts longer than 0.5 seconds. While
+              power delivery was determined using a hall effect current sensor,
+              the brake pressure was converted into a voltage using a pressure
+              sensor. A comparator was used to compare real-time signals against
+              pre-determined thresholds to binarize the output. If both of these
+              signals exceed their limits, meaning that they are considered
+              truthy, a capacitor whose time constant is 0.1s (steady state
+              achieved after 0.5s) begins charging. The voltage of the capacitor
+              is compared against its expected steady state to produce the
+              one-hot signal sent to the engine. Additionally, the circuit
+              offers open and short circuit protection that triggers engine
+              shutdown.
+            </p>
+            <p>
+              With respect to CAN communication, we connected ESP32s to a
+              breadboard, wired GPIO pins through an SN65HVD230 CAN transciever,
+              and used an open source library to configure the microcontrollers
+              to transmit, receive, and process sensor data.
+            </p>
+            <p>
+              <b>Skills Learned: </b> LTSpice, Eagle, Interfacing analog and
+              digital circuitry
+            </p>
+          </div>
+        </div>
+      </Modal>
+      <NavBar />
+      <div id="blur-on-modal">
+        <h1 className="post-nav my-header">
+          <span className="accent-text">Self-Directed </span>Projects
+        </h1>
+        <p
+          style={{
+            textAlign: "center",
+            margin: "25px 0px 10px 0px",
+            fontWeight: 300,
+            fontSize: "1rem",
+          }}
+          className="emphasized-text"
+        >
+          Click on any project to learn more
+        </p>
+        <p
+          style={{
+            textAlign: "center",
+            margin: "25px 0px 0px 0px",
+            fontWeight: 300,
+            fontSize: "1.3rem",
+          }}
+        >
+          Web & Cloud
+        </p>
+        <div className="card-container" style={{ width: "100vw" }}>
+          <Card
+            id="Sequence"
+            alt="Background image showing a page of the website"
+            className="my-card"
+            onMouseEnter={handleHover}
+            onMouseLeave={handleUnhover}
+          >
+            <Card.Body
+              onClick={() => handleOpenModal("sequence-modal")}
+              onTouchStart={handleTouchStart}
+            >
+              {" "}
+              <div className="short-info">
+                <Card.Title>Sequence</Card.Title>
+                <div className="icon-list-container">
+                  <div className="devicon">
+                    <DockerOriginal
+                      size={"26"}
+                      alt="NodeJS"
+                      style={{ color: "#6cc24a" }}
+                    ></DockerOriginal>
+                  </div>
+                  <div className="devicon">
+                    <FaNodeJs
+                      size={"20"}
+                      alt="NodeJS"
+                      style={{ color: "#6cc24a" }}
+                    ></FaNodeJs>
+                  </div>
+                  <div className="devicon">
+                    <SiExpress
+                      size={"20"}
+                      alt="ExpressJS"
+                      style={{
+                        backgroundColor: "white",
+                        borderRadius: "4px",
+                        color: "black",
+                        padding: "0px 1px",
+                      }}
+                    ></SiExpress>
+                  </div>
+                  <div className="devicon">
+                    <ReactOriginal size={20} alt="ReactJs"></ReactOriginal>
+                  </div>
+                  <div className="devicon">
+                    <SiAntdesign size={20} alt="ReactJs"></SiAntdesign>
+                  </div>
+                  <div className="devicon">
+                    <JavascriptOriginal size="20"></JavascriptOriginal>
+                  </div>
+                  <div className="devicon">
+                    <Css3Original size={"20"} alt="CSS"></Css3Original>
+                  </div>
+                  <div className="devicon">
+                    <GitOriginal size={"20"} alt="Git"></GitOriginal>
+                  </div>
+                </div>
+              </div>
+            </Card.Body>
+          </Card>
+          <Card
+            id="lan-fileserver"
+            alt="LAN File Server"
+            className="my-card"
+            onMouseEnter={handleHover}
+            onMouseLeave={handleUnhover}
+          >
+            <Card.Body
+              onClick={() => handleOpenModal("lan-fileserver-modal")}
+              onTouchStart={handleTouchStart}
+            >
+              {" "}
+              <div className="short-info">
+                <Card.Title>LAN File Server</Card.Title>
+                <div className="icon-list-container">
+                  <div className="devicon">
+                    <DockerOriginal size={"26"} alt="ASP.NET"></DockerOriginal>
+                  </div>
+                  <div className="devicon">
+                    <DotNetOriginal size={"26"} alt="ASP.NET"></DotNetOriginal>
+                  </div>
+                  <div className="devicon">
+                    <CsharpOriginal size={"20"} alt="C Sharp"></CsharpOriginal>
+                  </div>
+                  <div className="devicon">
+                    <FaGithub
+                      size={"20"}
+                      style={{ color: "#6e5494" }}
+                      alt="GitHub"
+                    ></FaGithub>
+                  </div>
+                </div>
+              </div>
+            </Card.Body>
+          </Card>
+          <Card
+            id="my-site"
+            alt="Background image showing the home page of this website"
+            className="my-card"
+            onMouseEnter={handleHover}
+            onMouseLeave={handleUnhover}
+          >
+            <Card.Body
+              onClick={() => handleOpenModal("my-site-modal")}
+              onTouchStart={handleTouchStart}
+            >
+              {" "}
+              <div className="short-info">
+                <Card.Title>Portfolio Website</Card.Title>
+                <div className="icon-list-container">
+                  <div className="devicon">
+                    <ReactOriginal size={"20"} alt="React"></ReactOriginal>
+                  </div>
+                  <div className="devicon">
+                    <img
+                      src={ReactBootstrapLogo}
+                      alt="React Bootstrap"
+                      style={{ height: 20 }}
+                    ></img>
+                  </div>
+                  <div className="devicon">
+                    <JavascriptOriginal size="20"></JavascriptOriginal>
+                  </div>
+                  <div className="devicon">
+                    <Css3Original size={"20"} alt="CSS"></Css3Original>
+                  </div>
+                  <div className="devicon">
+                    <FaGithub
+                      size={"20"}
+                      style={{ color: "#6e5494" }}
+                      alt="GitHub"
+                    ></FaGithub>
+                  </div>
+                </div>
+              </div>
+            </Card.Body>
+          </Card>
+        </div>
+        <p
+          style={{
+            textAlign: "center",
+            margin: "25px 0px 0px 0px",
+            fontWeight: 300,
+            fontSize: "1.3rem",
+          }}
+        >
+          Machine Learning & Aritifical Intelligence
+        </p>
+        <div className="card-container" style={{ width: "100vw" }}>
+          <Card
+            id="gesture-recognition"
+            alt="Background image showing data points used in analysis"
+            className="my-card"
+            onMouseEnter={handleHover}
+            onMouseLeave={handleUnhover}
+          >
+            <Card.Body
+              onClick={() => handleOpenModal("gesture-recognition-modal")}
+              onTouchStart={handleTouchStart}
+            >
+              {" "}
+              <div className="short-info">
+                <Card.Title>Hands-Free Gesture Recognition</Card.Title>
+                <div className="icon-list-container">
+                  <div>
+                    <DotNetOriginal size={0} alt="ASP.NET"></DotNetOriginal>
+                    {/*
+                    weird devicons bug where python, matlab, and dotnet use url(#a) and url(#b)
+                    for svg styling. whichever is first in dom takes priority
+
+                    forced to overwrite python colors since their logo
+                    colours are publicly
+
+                    therefore i have to load dotnet first, but if i do display none it never renders
+                    and updates the urls so i have to render it as size 0
+                    */}
+                  </div>
+                  <div className="devicon">
+                    <PythonOriginal
+                      size={"20"}
+                      alt="Python"
+                      className="python"
+                    ></PythonOriginal>
+                  </div>
+                  <div className="devicon">
+                    <CplusplusPlain size={"20"} alt="C++"></CplusplusPlain>
+                  </div>
+                  <div>
+                    <MatlabOriginal
+                      size={20}
+                      alt="MATLAB"
+                      className="matlab"
+                    ></MatlabOriginal>
+                  </div>
+                  <div className="devicon">
+                    <TensorflowOriginal
+                      size={"20"}
+                      alt="TensorFlow"
+                    ></TensorflowOriginal>
+                  </div>
+                  <div className="devicon">
+                    <NumpyOriginal size={"20"} alt="NumPy"></NumpyOriginal>
+                  </div>
+                  <div className="devicon">
+                    <OpencvOriginal size={"20"} alt="OpenCV"></OpencvOriginal>
+                  </div>
+                  {/*<div className='devicon'>
                                         <img src={ kivyLogo } alt="Kivy" style={{ height: 20, backgroundColor: "white", borderRadius: "10px"}}></img>
                                     </div>
                                     <div className='devicon'>
@@ -471,84 +985,168 @@ const Projects = () => {
                                     <div className='devicon'>
                                         <img src={ rosLogo } alt="ROS" style={{ height: 15, backgroundColor: "white", borderRadius: "2px"}}></img>
                                     </div> */}
-                                    <div className='devicon'>
-                                        <UbuntuPlain size={"20"} alt="Ubuntu"></UbuntuPlain>
-                                    </div>
-                                </div>
-                            </div>
-                        </Card.Body>
-                    </Card>
-                    <Card id="PCA" alt="Basis Spectrotemporal Surface Functions Determined through PCA" className='my-card' onMouseEnter={handleHover} onMouseLeave={handleUnhover}>
-                        <Card.Body onClick={()=> handleOpenModal("pca-modal")} onTouchStart={handleTouchStart}> <div className="short-info">
-                                <Card.Title>Spectrogram PCA</Card.Title>
-                                <div className='icon-list-container'>
-                                    <div className='devicon'>
-                                        <PythonOriginal size={20} alt="Python logo" className="python"></PythonOriginal>
-                                    </div>
-                                    <div className='devicon'>
-                                        <img src={librosa} style={{height: "25px", width: "25px"}} alt="Librosa logo"></img>
-                                    </div>
-                                    <div className='devicon'>
-                                        <NumpyOriginal size={"20"} alt="NumPy"></NumpyOriginal>
-                                    </div>
-                                    <div className='devicon'>
-                                        <SiScikitlearn size={25} alt="SciKit Learn Logo"></SiScikitlearn>
-                                    </div>
-                                    <div className='devicon'>
-                                        <FaGithub size={"20"} style={{color: '#6e5494'}} alt="GitHub"></FaGithub>
-                                    </div>
-                                </div>
-                            </div>
-                        </Card.Body>
-                    </Card>
-                    <Card id="my-site" alt="Background image showing the home page of this website" className='my-card' onMouseEnter={handleHover} onMouseLeave={handleUnhover}>
-                        <Card.Body onClick={()=> handleOpenModal("my-site-modal")} onTouchStart={handleTouchStart}> <div className="short-info">
-                                <Card.Title>Portfolio Website</Card.Title>
-                                <div className='icon-list-container'>
-                                    <div className='devicon'>
-                                        <ReactOriginal size={"20"} alt="React"></ReactOriginal>
-                                    </div>
-                                    <div className='devicon'>
-                                        <img src={ ReactBootstrapLogo } alt="React Bootstrap" style={{ height: 20 }}></img>
-                                    </div>
-                                    <div className='devicon'>
-                                        <DeviconsReactOriginal size={"20"} alt="Dev Icons"></DeviconsReactOriginal>
-                                    </div>
-                                    <div className='devicon'>
-                                        <JavascriptOriginal size="20"></JavascriptOriginal>
-                                    </div>
-                                    <div className='devicon'>
-                                        <Css3Original size={"20"} alt="CSS"></Css3Original>
-                                    </div>
-                                    <div className='devicon'>
-                                        <FaGithub size={"20"} style={{color: '#6e5494'}} alt="GitHub"></FaGithub>
-                                    </div>
-                                </div>
-                            </div>
-                        </Card.Body>
-                    </Card>
-                    <Card id="FSAE" alt="Circuit I designed" className='my-card' onMouseEnter={handleHover} onMouseLeave={handleUnhover}>
-                        <Card.Body onClick={()=> handleOpenModal("FSAE-modal")} onTouchStart={handleTouchStart}> <div className="short-info">
-                                <Card.Title>FSAE Circuit Design</Card.Title>
-                                <div className='icon-list-container'>
-                                    <div className='devicon'>
-                                        <SiLtspice size={20} color="red" alt="LTSpice logo"></SiLtspice>
-                                    </div>
-                                    <div className='devicon'>
-                                        <SiAutodesk size={20} alt="AutoDesk Logo"></SiAutodesk>
-                                    </div>
-                                    <div className='devicon'>
-                                        <SiEagle size={20} color="orange" alt="Eagle"></SiEagle>
-                                    </div>
-                                </div>
-                            </div>
-                        </Card.Body>
-                    </Card>
+                  <div className="devicon">
+                    <UbuntuPlain size={"20"} alt="Ubuntu"></UbuntuPlain>
+                  </div>
                 </div>
-                <Footer></Footer>
-            </div>
-        </div>
-    )
-}
+              </div>
+            </Card.Body>
+          </Card>
+          <Card
+            id="audio-inpainting"
+            alt="audio inpainting"
+            className="my-card"
+            onMouseEnter={handleHover}
+            onMouseLeave={handleUnhover}
+          >
+            <Card.Body
+              onClick={() => handleOpenModal("audio-inpainting-modal")}
+              onTouchStart={handleTouchStart}
+            >
+              {" "}
+              <div className="short-info">
+                <Card.Title>Audio Inpainting</Card.Title>
+                <div className="icon-list-container">
+                  <div className="devicon">
+                    <PythonOriginal
+                      size={20}
+                      alt="Python logo"
+                      className="python"
+                    ></PythonOriginal>
+                  </div>
+                  <div className="devicon">
+                    <img
+                      src={librosa}
+                      style={{ height: "25px", width: "25px" }}
+                      alt="Librosa logo"
+                    ></img>
+                  </div>
+                  <div className="devicon">
+                    <NumpyOriginal size={"20"} alt="NumPy"></NumpyOriginal>
+                  </div>
+                  <div className="devicon">
+                    <PandasOriginal
+                      size={"20"}
+                      style={{ background: "white", borderRadius: "4px" }}
+                      alt="NumPy"
+                    ></PandasOriginal>
+                  </div>
+                  <div className="devicon">
+                    <SiScikitlearn
+                      size={25}
+                      alt="SciKit Learn Logo"
+                    ></SiScikitlearn>
+                  </div>
+                  <div className="devicon">
+                    <FaGithub
+                      size={"20"}
+                      style={{ color: "#6e5494" }}
+                      alt="GitHub"
+                    ></FaGithub>
+                  </div>
+                </div>
+              </div>
+            </Card.Body>
+          </Card>
 
-export default Projects
+          <Card
+            id="PCA"
+            alt="Basis Spectrotemporal Surface Functions Determined through PCA"
+            className="my-card"
+            onMouseEnter={handleHover}
+            onMouseLeave={handleUnhover}
+          >
+            <Card.Body
+              onClick={() => handleOpenModal("pca-modal")}
+              onTouchStart={handleTouchStart}
+            >
+              {" "}
+              <div className="short-info">
+                <Card.Title>Spectrogram PCA</Card.Title>
+                <div className="icon-list-container">
+                  <div className="devicon">
+                    <PythonOriginal
+                      size={20}
+                      alt="Python logo"
+                      className="python"
+                    ></PythonOriginal>
+                  </div>
+                  <div className="devicon">
+                    <img
+                      src={librosa}
+                      style={{ height: "25px", width: "25px" }}
+                      alt="Librosa logo"
+                    ></img>
+                  </div>
+                  <div className="devicon">
+                    <NumpyOriginal size={"20"} alt="NumPy"></NumpyOriginal>
+                  </div>
+                  <div className="devicon">
+                    <SiScikitlearn
+                      size={25}
+                      alt="SciKit Learn Logo"
+                    ></SiScikitlearn>
+                  </div>
+                  <div className="devicon">
+                    <FaGithub
+                      size={"20"}
+                      style={{ color: "#6e5494" }}
+                      alt="GitHub"
+                    ></FaGithub>
+                  </div>
+                </div>
+              </div>
+            </Card.Body>
+          </Card>
+        </div>
+        <p
+          style={{
+            textAlign: "center",
+            margin: "25px 0px 0px 0px",
+            fontWeight: 300,
+            fontSize: "1.3rem",
+          }}
+        >
+          Misc.
+        </p>
+        <div className="card-container" style={{ width: "100vw" }}>
+          <Card
+            id="FSAE"
+            alt="Circuit I designed"
+            className="my-card"
+            onMouseEnter={handleHover}
+            onMouseLeave={handleUnhover}
+          >
+            <Card.Body
+              onClick={() => handleOpenModal("FSAE-modal")}
+              onTouchStart={handleTouchStart}
+            >
+              {" "}
+              <div className="short-info">
+                <Card.Title>FSAE Circuit Design</Card.Title>
+                <div className="icon-list-container">
+                  <div className="devicon">
+                    <SiLtspice
+                      size={20}
+                      color="red"
+                      alt="LTSpice logo"
+                    ></SiLtspice>
+                  </div>
+                  <div className="devicon">
+                    <SiAutodesk size={20} alt="AutoDesk Logo"></SiAutodesk>
+                  </div>
+                  <div className="devicon">
+                    <SiEagle size={20} color="orange" alt="Eagle"></SiEagle>
+                  </div>
+                </div>
+              </div>
+            </Card.Body>
+          </Card>
+        </div>
+        <Footer></Footer>
+      </div>
+    </div>
+  );
+};
+
+export default Projects;
