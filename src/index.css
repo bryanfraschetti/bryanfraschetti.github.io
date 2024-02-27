@@ -240,7 +240,7 @@ ul{
 /*devicons python and matlab both fill  using url(#a) and url(#b)
 whichever loads first overwrites the other so this is
 to restyle the svg and keep it true to the logo*/
-.python :nth-last-child(3){
+/* .python :nth-last-child(3){
     fill: #ffd343;
 }
 
@@ -258,4 +258,4 @@ to restyle the svg and keep it true to the logo*/
 
 .matlab path:nth-child(4){
     fill: #e95d2b;
-}
+} */

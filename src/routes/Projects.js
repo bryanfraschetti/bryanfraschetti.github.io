@@ -14,16 +14,17 @@ import {
   PandasOriginal,
   PythonOriginal,
   ReactOriginal,
+  RedisOriginal,
+  ScikitlearnOriginal,
   TensorflowOriginal,
   UbuntuPlain,
 } from "devicons-react";
 import {
-  SiAntdesign,
+  //   SiAntdesign,
   SiAutodesk,
   SiEagle,
   SiExpress,
   SiLtspice,
-  SiScikitlearn,
 } from "react-icons/si";
 import { FaGithub, FaNodeJs } from "react-icons/fa";
 import librosa from "../assets/icons/librosa.png";
@@ -214,7 +215,10 @@ const Projects = () => {
                 token refresh, can be made directly from the client to Spotify
                 without bottlenecking my web-app. Authorization persistence
                 across sessions is achieved through this same mechanism. The
-                front-end is built using React and AntDesign.
+                front-end is built using React and AntDesign. Moreover, using
+                Redis, server-side caching was implemented to limit how often
+                certain frequently accessed resources, as well as content heavy
+                API endpoints, were requested from Spotify.
               </p>
               <p>
                 The production version of the app is instantiated by
@@ -226,8 +230,9 @@ const Projects = () => {
             </p>
             <p>
               <b className="keys">Skills Learned: </b> Docker, Containerization,
-              RESTful API, Secure Token Management, OAuth, Fetch API,
-              Async/Await, Promises, XHR, JSON, Bootstrap
+              Redis, Caching, Cache Invalidation, RESTful API, Secure Token
+              Management, OAuth, Fetch API, Async/Await, Promises, XHR, JSON,
+              Bootstrap
             </p>
             <Ghb repo="https://github.com/bryanfraschetti/Sequence"></Ghb>
           </div>
@@ -815,14 +820,17 @@ const Projects = () => {
                     <ReactOriginal size={20} alt="ReactJs"></ReactOriginal>
                   </div>
                   <div className="devicon">
-                    <SiAntdesign size={20} alt="ReactJs"></SiAntdesign>
+                    <RedisOriginal size={20} alt="Redis"></RedisOriginal>
                   </div>
+                  {/* <div className="devicon">
+                    <SiAntdesign size={20} alt="ReactJs"></SiAntdesign>
+                  </div> */}
                   <div className="devicon">
                     <JavascriptOriginal size="20"></JavascriptOriginal>
                   </div>
-                  <div className="devicon">
+                  {/* <div className="devicon">
                     <Css3Original size={"20"} alt="CSS"></Css3Original>
-                  </div>
+                  </div> */}
                   <div className="devicon">
                     <GitOriginal size={"20"} alt="Git"></GitOriginal>
                   </div>
@@ -930,23 +938,9 @@ const Projects = () => {
               onClick={() => handleOpenModal("gesture-recognition-modal")}
               onTouchStart={handleTouchStart}
             >
-              {" "}
               <div className="short-info">
                 <Card.Title>Hands-Free Gesture Recognition</Card.Title>
                 <div className="icon-list-container">
-                  <div>
-                    <DotNetOriginal size={0} alt="ASP.NET"></DotNetOriginal>
-                    {/*
-                    weird devicons bug where python, matlab, and dotnet use url(#a) and url(#b)
-                    for svg styling. whichever is first in dom takes priority
-
-                    forced to overwrite python colors since their logo
-                    colours are publicly
-
-                    therefore i have to load dotnet first, but if i do display none it never renders
-                    and updates the urls so i have to render it as size 0
-                    */}
-                  </div>
                   <div className="devicon">
                     <PythonOriginal
                       size={"20"}
@@ -1032,10 +1026,10 @@ const Projects = () => {
                     ></PandasOriginal>
                   </div>
                   <div className="devicon">
-                    <SiScikitlearn
+                    <ScikitlearnOriginal
                       size={25}
                       alt="SciKit Learn Logo"
-                    ></SiScikitlearn>
+                    ></ScikitlearnOriginal>
                   </div>
                   <div className="devicon">
                     <FaGithub
@@ -1082,10 +1076,10 @@ const Projects = () => {
                     <NumpyOriginal size={"20"} alt="NumPy"></NumpyOriginal>
                   </div>
                   <div className="devicon">
-                    <SiScikitlearn
+                    <ScikitlearnOriginal
                       size={25}
                       alt="SciKit Learn Logo"
-                    ></SiScikitlearn>
+                    ></ScikitlearnOriginal>
                   </div>
                   <div className="devicon">
                     <FaGithub

@@ -33,6 +33,7 @@ import {
   PandasOriginal,
   DotNetOriginal,
   CsharpOriginal,
+  ScikitlearnOriginal,
   //   BashOriginal,
 } from "devicons-react";
 import gsap from "gsap";
@@ -165,23 +166,6 @@ const Home = () => {
             My Favourite Web Development Tools
           </div>
           <RevealComponent>
-            {/*
-            weird devicons bug where python, matlab, and dotnet use url(#a) and url(#b)
-            for svg styling. whichever is first in dom takes priority
-
-            forced to overwrite python colors since their logo
-            colours are publicly
-
-            therefore i have to load dotnet first, but if i do display none it never renders
-            and updates the urls so i have to render it as size 0
-            */}
-            <div>
-              <DotNetOriginal
-                size={0}
-                className="my-tools-icons"
-                alt="ASP.NET"
-              ></DotNetOriginal>
-            </div>
             <div className="row-flex-center">
               <div>
                 <JavascriptOriginal
@@ -276,6 +260,13 @@ const Home = () => {
                   className="my-tools-icons"
                   alt="TensorFlow"
                 ></TensorflowLine>
+              </div>
+              <div>
+                <ScikitlearnOriginal
+                  size={70}
+                  className="my-tools-icons"
+                  alt="SciKit Learn"
+                ></ScikitlearnOriginal>
               </div>
               <div>
                 <NumpyOriginal
