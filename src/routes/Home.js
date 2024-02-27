@@ -87,7 +87,7 @@ const Home = () => {
         <RevealComponent>
           <div className="three-container">
             <div className="column">
-              <div className="col-head">Qualities</div>
+              <h3 className="col-head">Qualities</h3>
               <p>
                 I am a<span className="emphasized-text"> curious </span>{" "}
                 individual who is driven to be constantly learning,
@@ -103,7 +103,7 @@ const Home = () => {
               </p>
             </div>
             <div className="column">
-              <div className="col-head">Summary of Experiences</div>
+              <h3 className="col-head">Summary of Experiences</h3>
               <p>
                 I am a qualified professional with a strong background in{" "}
                 <span className="emphasized-text">full stack</span> and
@@ -117,7 +117,7 @@ const Home = () => {
               </p>
             </div>
             <div className="column">
-              <div className="col-head">Interests</div>
+              <h3 className="col-head">Interests</h3>
               <p>
                 I am an enthusiastic individual with a diverse set of interests,
                 both casual and academic. In my free time, one of my major
@@ -140,11 +140,12 @@ const Home = () => {
             padding: "40px 0px",
           }}
         >
-          <div
+          <h3
             style={{
               margin: "20px 10px 20px 10px",
               fontSize: "2rem",
               textAlign: "center",
+              fontWeight: "400",
             }}
           >
             Building{" "}
@@ -153,8 +154,8 @@ const Home = () => {
               Your{" "}
             </span>{" "}
             Solutions with Modern Tools
-          </div>
-          <div
+          </h3>
+          <h5
             style={{
               fontSize: "1.1rem",
               margin: "20px 0px 30px 0px",
@@ -164,7 +165,7 @@ const Home = () => {
             }}
           >
             My Favourite Web Development Tools
-          </div>
+          </h5>
           <RevealComponent>
             <div className="row-flex-center">
               <div>
@@ -234,7 +235,7 @@ const Home = () => {
               </div>
             </div>
           </RevealComponent>
-          <div
+          <h5
             style={{
               fontSize: "1.1rem",
               margin: "50px 0px 50px 0px",
@@ -244,7 +245,7 @@ const Home = () => {
             }}
           >
             My Favourite Machine Learning Technologies
-          </div>
+          </h5>
           <RevealComponent>
             <div className="row-flex-center">
               <div>
@@ -352,13 +353,13 @@ const Home = () => {
             </div>
           </RevealComponent> */}
         </div>
-
         <div>
-          <div
+          <h3
             style={{
               fontSize: "2rem",
               margin: "60px 10px 20px 10px",
               textAlign: "center",
+              fontWeight: "400",
             }}
           >
             See How I Learned these
@@ -366,38 +367,39 @@ const Home = () => {
               {" "}
               Skills
             </span>
-            <div
-              className="row-flex-center"
-              style={{ marginBottom: "50px", marginTop: "20px" }}
-            >
-              <Link to={"./Projects"}>
-                <Button
-                  variant="outline-info"
-                  className="my-btn"
-                  style={{ margin: "20px 10px" }}
-                >
-                  Projects
-                </Button>
-              </Link>
-              <Link to={"./Experience"}>
-                <Button
-                  variant="outline-info"
-                  className="my-btn"
-                  style={{ margin: "20px 10px" }}
-                >
-                  Experience
-                </Button>
-              </Link>
-              <Link to={"./Education"}>
-                <Button
-                  variant="outline-info"
-                  className="my-btn"
-                  style={{ margin: "20px 10px" }}
-                >
-                  Education
-                </Button>
-              </Link>
-            </div>
+          </h3>
+
+          <div
+            className="row-flex-center"
+            style={{ marginBottom: "50px", marginTop: "20px" }}
+          >
+            <Link to={"./Projects"}>
+              <Button
+                variant="outline-info"
+                className="my-btn"
+                style={{ margin: "20px 10px" }}
+              >
+                Projects
+              </Button>
+            </Link>
+            <Link to={"./Experience"}>
+              <Button
+                variant="outline-info"
+                className="my-btn"
+                style={{ margin: "20px 10px" }}
+              >
+                Experience
+              </Button>
+            </Link>
+            <Link to={"./Education"}>
+              <Button
+                variant="outline-info"
+                className="my-btn"
+                style={{ margin: "20px 10px" }}
+              >
+                Education
+              </Button>
+            </Link>
           </div>
         </div>
       </Element>
