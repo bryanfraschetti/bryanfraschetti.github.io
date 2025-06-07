@@ -16,9 +16,9 @@ import { LiaPencilRulerSolid } from "react-icons/lia";
 import "./Home.css";
 import {
   CplusplusPlain,
-  ExpressOriginal,
+  //   ExpressOriginal,
   //   GitOriginal,
-  JavascriptOriginal,
+  //   JavascriptOriginal,
   MatlabOriginal,
   MysqlOriginal,
   NginxOriginal,
@@ -26,14 +26,19 @@ import {
   NumpyOriginal,
   OpencvOriginal,
   PythonOriginal,
-  ReactOriginal,
+  //   ReactOriginal,
   TensorflowLine,
   //   VscodeOriginal,
   DockerOriginal,
   PandasOriginal,
-  DotNetOriginal,
-  CsharpOriginal,
+  //   DotNetOriginal,
+  //   CsharpOriginal,
   ScikitlearnOriginal,
+  LinuxOriginal,
+  UbuntuOriginal,
+  GrafanaOriginal,
+  PrometheusOriginal,
+  TerraformOriginal,
   //   BashOriginal,
 } from "devicons-react";
 import gsap from "gsap";
@@ -164,38 +169,23 @@ const Home = () => {
               textAlign: "center",
             }}
           >
-            My Favourite Web Development Tools
+            My Favourite Server Tools
           </h5>
           <RevealComponent>
             <div className="row-flex-center">
               <div>
-                <JavascriptOriginal
+                <LinuxOriginal
                   size={70}
                   className="my-tools-icons"
-                  alt="Javascript"
-                ></JavascriptOriginal>
+                  alt="Linux"
+                ></LinuxOriginal>
               </div>
               <div>
-                <NodejsOriginal
+                <UbuntuOriginal
                   size={70}
                   className="my-tools-icons"
-                  alt="NodeJS"
-                ></NodejsOriginal>
-              </div>
-              <div>
-                <ExpressOriginal
-                  size={70}
-                  className="my-tools-icons"
-                  alt="ExpressJS"
-                  style={{ backgroundColor: "white", borderRadius: "4px" }}
-                ></ExpressOriginal>
-              </div>
-              <div>
-                <ReactOriginal
-                  size={70}
-                  className="my-tools-icons"
-                  alt="ReactJS"
-                ></ReactOriginal>
+                  alt="Linux"
+                ></UbuntuOriginal>
               </div>
               <div>
                 <DockerOriginal
@@ -203,6 +193,21 @@ const Home = () => {
                   className="my-tools-icons"
                   alt="Docker"
                 ></DockerOriginal>
+              </div>
+              <div>
+                <TerraformOriginal
+                  size={70}
+                  className="my-tools-icons"
+                  alt="Terraform"
+                  style={{ borderRadius: "4px" }}
+                ></TerraformOriginal>
+              </div>
+              <div>
+                <NodejsOriginal
+                  size={70}
+                  className="my-tools-icons"
+                  alt="NodeJS"
+                ></NodejsOriginal>
               </div>
               <div>
                 <NginxOriginal
@@ -220,18 +225,18 @@ const Home = () => {
                 ></MysqlOriginal>
               </div>
               <div>
-                <DotNetOriginal
+                <GrafanaOriginal
                   size={70}
                   className="my-tools-icons"
-                  alt="ASP.NET"
-                ></DotNetOriginal>
+                  alt="Grafana"
+                ></GrafanaOriginal>
               </div>
               <div>
-                <CsharpOriginal
+                <PrometheusOriginal
                   size={70}
                   className="my-tools-icons"
-                  alt="C Sharp"
-                ></CsharpOriginal>
+                  alt="Prometheus"
+                ></PrometheusOriginal>
               </div>
             </div>
           </RevealComponent>

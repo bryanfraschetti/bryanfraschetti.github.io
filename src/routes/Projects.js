@@ -7,11 +7,13 @@ import {
   DockerOriginal,
   DotNetOriginal,
   GitOriginal,
+  GrafanaOriginal,
   JavascriptOriginal,
   MatlabOriginal,
   NumpyOriginal,
   OpencvOriginal,
   PandasOriginal,
+  PrometheusOriginal,
   PythonOriginal,
   ReactOriginal,
   RedisOriginal,
@@ -32,6 +34,8 @@ import librosa from "../assets/icons/librosa.png";
 // import kivyLogo from "../assets/icons/kivy.svg";
 // import XtensorLogo from "../assets/icons/Xtensor_logo.svg";
 import ReactBootstrapLogo from "../assets/icons/react-bootstrap.svg";
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 import SequenceHomePage from "../assets/Sequence/index.gif";
 import SequenceCarousel from "../assets/Sequence/carousel.gif";
@@ -189,6 +193,19 @@ const Projects = () => {
             </Carousel.Item>
           </Carousel>
           <div style={{ width: "90%" }}>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                marginBottom: "15px",
+              }}
+            >
+              <Link to={"https://sequencewav.com"} target="_blank">
+                <Button variant="outline-info" className="my-btn see-more">
+                  Try it out!
+                </Button>
+              </Link>
+            </div>
             <p>
               <b className="keys">Summary: </b>
               Sequence is a web-app that I built which uses the Spotify API to
@@ -202,8 +219,8 @@ const Projects = () => {
             </p>
             <p>
               <b className="keys">Status: </b>
-              <span> In progress </span>
-              (Apr. 2022 - ?)
+              <span> In Production </span>
+              (Apr. 2022 - Present)
             </p>
             <p>
               <p>
@@ -798,6 +815,31 @@ const Projects = () => {
                     ></DockerOriginal>
                   </div>
                   <div className="devicon">
+                    <RedisOriginal size={20} alt="Redis"></RedisOriginal>
+                  </div>
+                  {/* <div className="devicon">
+                    <SiAntdesign size={20} alt="ReactJs"></SiAntdesign>
+                  </div> */}
+                  {/* <div className="devicon">
+                    <JavascriptOriginal size="20"></JavascriptOriginal>
+                  </div> */}
+
+                  <div className="devicon">
+                    <GrafanaOriginal size={20} alt="Grafana"></GrafanaOriginal>
+                  </div>
+                  <div className="devicon">
+                    <PrometheusOriginal
+                      size={20}
+                      alt="Prometheus"
+                    ></PrometheusOriginal>
+                  </div>
+                  {/* <div className="devicon">
+                    <Css3Original size={"20"} alt="CSS"></Css3Original>
+                  </div> */}
+                  <div className="devicon">
+                    <GitOriginal size={"20"} alt="Git"></GitOriginal>
+                  </div>
+                  <div className="devicon">
                     <FaNodeJs
                       size={"20"}
                       alt="NodeJS"
@@ -818,21 +860,6 @@ const Projects = () => {
                   </div>
                   <div className="devicon">
                     <ReactOriginal size={20} alt="ReactJs"></ReactOriginal>
-                  </div>
-                  <div className="devicon">
-                    <RedisOriginal size={20} alt="Redis"></RedisOriginal>
-                  </div>
-                  {/* <div className="devicon">
-                    <SiAntdesign size={20} alt="ReactJs"></SiAntdesign>
-                  </div> */}
-                  <div className="devicon">
-                    <JavascriptOriginal size="20"></JavascriptOriginal>
-                  </div>
-                  {/* <div className="devicon">
-                    <Css3Original size={"20"} alt="CSS"></Css3Original>
-                  </div> */}
-                  <div className="devicon">
-                    <GitOriginal size={"20"} alt="Git"></GitOriginal>
                   </div>
                 </div>
               </div>
